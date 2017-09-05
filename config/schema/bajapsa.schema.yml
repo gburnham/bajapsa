@@ -1,0 +1,5 @@
+# Required to validate default theme settings.
+
+bajapsa.settings:
+  type: theme_settings
+  label: 'BAJapsa settings'
