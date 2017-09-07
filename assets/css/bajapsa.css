@@ -6,6 +6,9 @@ BAJAPSA Styles
 */
 /* Import Base Fonts */
 @import url(https://fonts.googleapis.com/css?family=Lato|Roboto:300,300i,400,400i,700,700i);
+/* apsa color palette */
+/* opacity of page header color overlays */
+/* breakpoints */
 /* Reset
 ================================================== */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -45,6 +48,19 @@ body {
   -webkit-text-size-adjust: 100%;
   font: 16px/1.8 'Lato', 'Roboto', Arial, Helvetica, sans-serif;
   color: #606060; }
+
+/* Links */
+a {
+  color: #498fe1; }
+  a:visited {
+    color: #498fe1; }
+  a:hover, a:focus, a:active {
+    color: #003F64;
+    text-decoration: none; }
+
+/* remove blue glow on focus */
+input:focus, textarea:focus, summary:focus, details:focus {
+  outline: none; }
 
 /*set max img width*/
 img {
@@ -227,6 +243,7 @@ a:focus {
   position: relative; }
 
 .site-branding {
+  margin-top: 20px;
   margin-bottom: 20px; }
 
 #site-logo {
@@ -241,6 +258,10 @@ h1#site-title {
 
 h1#site-title a:link, h1#site-title a:visited {
   color: #000; }
+
+.site-header {
+  background-color: #003F64;
+  color: #FFF; }
 
 /* Menu */
 .menutoggle {
@@ -265,23 +286,25 @@ h1#site-title a:link, h1#site-title a:visited {
   border-bottom: none;
   float: left; }
 
-#main-menu ul {
+/* #main-menu ul {
   width: auto;
-  float: left;
+  float:left;
   list-style: none;
   margin: 0;
-  padding: 0 0px; }
-
+  padding: 0 0px;
+}
+*/
 #main-menu li {
   float: left;
   list-style: none;
   margin: 0;
   padding: 0;
   color: #fff;
+  font-size: 1.42857em;
   font-weight: 400; }
 
 #main-menu li a {
-  color: #777;
+  color: #FFF;
   display: block;
   margin: 0;
   padding: 19px 10px 19px 10px;
@@ -289,7 +312,7 @@ h1#site-title a:link, h1#site-title a:visited {
   position: relative; }
 
 #main-menu li a:hover, #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
-  color: #ed564b; }
+  color: #eee; }
 
 #main-menu li a.sf-with-ul {
   padding-right: 10px; }
@@ -309,7 +332,7 @@ h1#site-title a:link, h1#site-title a:visited {
   border-top: none; }
 
 #main-menu li ul li a:hover, #main-menu li ul li ul li a:hover, #main-menu li ul li ul li ul li a:hover {
-  color: #ed564b; }
+  color: #498fe1; }
 
 #main-menu li ul {
   font-size: 12px;
@@ -436,19 +459,25 @@ a.frmore {
   color: #fff;
   text-transform: uppercase; }
 
+/* Content */
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300; }
+
 /* Footer */
-.site-footer {
+/* .site-footer{
   padding: 10px 0px;
-  background: #292929;
-  font-size: 12px; }
-
-.fcred {
+  background:#292929;
+  font-size: 12px;
+} */
+/* .fcred{
   padding: 10px 0px;
-  color: #bbb; }
+  color: #bbb;
+}
 
-.fcred a:link, .fcred a:visited {
-  color: #fff; }
-
+.fcred a:link, .fcred a:visited{
+  color:#fff;
+} */
 /* Content
 ----------------------------------------------- */
 .node h2.title a, h1.page-title {
@@ -493,6 +522,13 @@ a.frmore {
 
 .preface-block .block, .footer-block .block, .region-footer .block, .region-header .block, .region-content-top .block {
   margin-bottom: 30px; }
+
+/* apsa adjustments */
+#main-content {
+  padding-top: 0; }
+
+#primary {
+  padding-top: 0; }
 
 /* -------------- Form Elements  ------------- */
 fieldset {
@@ -1281,31 +1317,13 @@ ul.inline, ul.links.inline {
 /* Styles from APSA-Nexus
 /*
 /*-------------------------------------------*/
-/* apsa color palette */
-/* opacity of page header color overlays */
-/* breakpoints */
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-/* Links */
-a {
-  color: #498fe1; }
-  a:visited {
-    color: #498fe1; }
-  a:hover, a:focus, a:active {
-    color: #003F64;
-    text-decoration: none; }
-
-#main-content {
-  padding-top: 0; }
-
-#primary {
-  padding-top: 0; }
-
-/* remove blue glow on focus */
-input:focus, textarea:focus, summary:focus, details:focus {
-  outline: none; }
-
+/* 
+links styles included in nexus-scss/nexus-body-and-main
+content styles included in nexus-scss/nexus-content
+*/
 /* ----- containers ----- */
 /*
 .container-fluid {
@@ -1320,10 +1338,9 @@ input:focus, textarea:focus, summary:focus, details:focus {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300; }
-
+/* 
+typography styles included in nexus-scss/nexus-typography
+*/
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1541,10 +1558,9 @@ ul.top-menu > li {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-.site-branding {
-  margin-top: 20px;
-  margin-bottom: 20px; }
-
+/* 
+apsa-header styles included in nexus-scss/nexus-typography
+*/
 .page-header-container.container-fluid {
   padding-right: 0;
   padding-left: 0; }
