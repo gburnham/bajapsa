@@ -49,24 +49,10 @@
  */
 #}
 <div id="page">
-  <header id="masthead" class="site-header container" role="banner">
-    <div class="row">
-      {% if page.header %}
-        <div id="logo" class="site-branding col-sm-6">
-          {{ page.header }}
-        </div>
-      {% endif %}
-      <div class="col-sm-6 mainmenu">
-        <div class="mobilenavi"></div>
-        <nav id="navigation" role="navigation">
-          <div id="main-menu">
-            {% if page.main_navigation %}
-                {{ page.main_navigation }}
-            {% endif %}
-          </div>
-        </nav>
-      </div>
-    </div>
+  <header id="masthead" class="site-header container-fluid" role="banner">
+
+{% include  directory ~ '/templates/partials/top-nav.html.twig' %}
+
   </header>
 
   {% if page.preface_first or page.preface_second or page.preface_third %}
@@ -74,16 +60,19 @@
       <div class="container">
         <div class="row">
           {% if page.preface_first %}
+            <!-- preface 1 -->
             <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
               {{ page.preface_first }}
             </div>
           {% endif %}
           {% if page.preface_second %}
+            <!-- preface 2 -->
             <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
               {{ page.preface_second }}
             </div>
           {% endif %}
           {% if page.preface_third %}
+          <!-- preface 3 -->
             <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
               {{ page.preface_third }}
             </div>
@@ -105,6 +94,110 @@
     </div>
   {% endif %}
 
+  <!-- page header -->
+  <div class="page-header-container container-fluid">
+
+
+ {% if (apsamisc_contenttype() == "general_page") %}
+        {% set pageType = node.get("field_generalpage_pagetype").target_id %}
+        {% if (pageType == 3) %}
+<!-- this is an About APSA page -->
+  <div class="page-header-section page-header-section-about overlay">
+    <h1 class="page-header-title">About APSA</h1>
+  </div>  
+
+  </div>
+        {% elseif (pageType == 5) %}
+<!-- this is an Agenda -->
+  <div class="page-header-section page-header-section-agenda overlay">
+    <h1 class="page-header-title">Agenda</h1>
+  </div>
+        {% elseif (pageType == 6) %}
+<!-- this is an Agreement page -->
+  <div class="page-header-section page-header-section-agreement overlay">
+    <h1 class="page-header-title">Agreement</h1>
+  </div>
+        {% elseif (pageType == 7) %}
+<!-- this is a Bylaws page -->
+  <div class="page-header-section page-header-section-bylaws overlay">
+    <h1 class="page-header-title">Bylaws</h1>
+  </div>
+        {% elseif (pageType == 8) %}
+<!-- this is a Policy page -->
+  <div class="page-header-section page-header-section-policy overlay">
+    <h1 class="page-header-title">Policy</h1>
+  </div>
+        {% elseif (pageType == 9) %}
+<!-- this is a Minutes page -->
+  <div class="page-header-section page-header-section-minutes overlay">
+    <h1 class="page-header-title">Minutes</h1>
+  </div>
+        {% elseif (pageType == 10) %}
+<!-- this is a News Item -->
+  <div class="page-header-section page-header-section-news overlay">
+    <h1 class="page-header-title">News</h1>
+  </div>
+        {% elseif (pageType == 11) %}
+<!-- this is a Report -->
+  <div class="page-header-section page-header-section-report overlay">
+    <h1 class="page-header-title">Report</h1>
+  </div>
+        {% elseif (pageType == 12) %}
+<!-- this is a Strategic Plan -->
+  <div class="page-header-section page-header-section-strategic_plan overlay">
+    <h1 class="page-header-title">Strategic Plan</h1>
+  </div>
+        {% else %}
+<!-- unknown type - output a generic header -->
+  <div class="page-header-section page-header-section-general overlay">
+    <h1 class="page-header-title">{{ node.label }}</h1>
+    
+  </div>
+        {% endif %}
+{% elseif (apsamisc_contenttype() == "committee") %}
+  <div class="page-header-section page-header-section-general overlay">
+      <h1 class="page-header-title">{{ node.label }}</h1>
+
+    <!-- static placeholder text for purposes of styling this section -->
+
+    <div class="page-header-committee-membership">
+      <div{{ attributes.addClass('page-header-committee-chair') }}>
+        <span class="label-chair">Chair</span>:&nbsp;
+        <span class="label-names" id="committee-chair-header-field"></span>
+      </div>
+      <div{{ attributes.addClass('page-header-committee-chair') }}>
+        <span class="label-members">Members</span>:&nbsp;
+        <span class="label-names" id="committee-member-header-field"></span>
+      </div>
+    </div>
+
+    <!-- #end placeholder text -->
+    
+  </div>
+{% else %}
+  <div class="page-header-section page-header-section-general overlay">
+      <h1 class="page-header-title">{{ node.label }}</h1>
+
+  </div>
+{% endif %}
+
+
+  
+
+  <!-- breadcrumb below header image -->
+
+  {% if page.breadcrumb %}
+    <div id="breadcrumbs">
+      <div class="container">
+        <div class="row">      
+      {{ page.breadcrumb }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- #page header -->
+
   <div id="main-content">
     <div class="container">
       <div class="row">
@@ -121,6 +214,7 @@
                   {{ breadcrumb }}
                 </div>
               {% endif %}
+
             {% endif %}
             {{ messages }}
             {% if page.content_top %}
@@ -143,54 +237,6 @@
     </div>
   </div>
 
-  {% if page.footer %}
-    <div id="footer-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            {{ page.footer }}
-          </div>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-    <div id="bottom">
-      <div class="container">
-        <div class="row">
-          {% if page.footer_first %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_first }}
-            </div>
-          {% endif %}
-          {% if page.footer_second %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_second }}
-            </div>
-          {% endif %}
-          {% if page.footer_third %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_third }}
-            </div>
-          {% endif %}
-          {% if page.footer_fourth %}
-            <div class="{{ 'footer-block col-sm-' ~ footer_col }}">
-              {{ page.footer_fourth }}
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  <footer id="colophon" class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="row">
-        <div class="fcred col-sm-12">
-          {{ "Copyright"|t }} &copy; {{ this_year }}, <a href="{{ front_page }}">{{ site_name }}</a>. {{ "Theme by"|t }} <a href="http://www.devsaran.com" target="_blank">Devsaran</a>.
-        </div>
-      </div>
-    </div>
-  </footer>
+  {% include  directory ~ '/templates/partials/footer.html.twig' %}
+ 
 </div>
