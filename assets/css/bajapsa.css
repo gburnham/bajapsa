@@ -1523,6 +1523,10 @@ ul.top-menu > li {
   ul.top-menu > li ul li {
     text-transform: capitalize; }
 
+@media (max-width: 992px) {
+  .top-menu {
+    font-size: 0.875em; } }
+
 /* account login menu */
 .account-login {
   padding: 20px 10px;
@@ -1950,7 +1954,7 @@ h2 {
   color: #fff; }
 
 .copyright {
-  font-size: 0.857em; }
+  font-size: 0.625em; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
