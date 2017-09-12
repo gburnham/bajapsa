@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Custom theme implementation for the Chair field on the Committee page
+ *
+ */
+#}
+<div{{  attributes.addClass('page-header-committee-chair') }}>
+ <span{{ title_attributes.addClass('label-chair') }}>{{ label }}</span>:&nbsp;
+ {% for item in items %}
+   <span{{ item.attributes.addClass('label-names') }}>{{ item.content }}</span>
+ {% endfor %}
+</div>

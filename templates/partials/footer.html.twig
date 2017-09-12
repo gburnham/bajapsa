@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Template partial for the APSA Nexus footer 
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ *
+ * Regions:
+ * - footer: Items for the Footer region.
+ * - footer_first: Items for the First Bottom region.
+ * - footer_second: Items for the Second Bottom region.
+ * - footer_third: Items for the Third Bottom region.
+ * - footer_fourth: Items for the Fourth Bottom region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+<!-- begin footer -->
+<!--  { % if page.footer %} 
+    <div id="footer-block" class="apsa-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            {{ page.footer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  { % endif %}
+
+  { % if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %} -->
+    <div id="footer" class="apsa-footer">
+      <div class="container">
+        <div class="row">
+        <!--  { % if page.footer_first %} -->
+            <div class="{{ 'footer-block col-sm-9' }}">
+              {{ page.footer_first }} 
+            </div>
+        <!--  { % endif %} -->
+          {% if page.footer_fourth %}
+            <div class="{{ 'footer-block footer-contact col-sm-2' }}">
+              {{ page.footer_fourth }}
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </div>
+          {% endif %}
+        </div>
+        <div class="row">
+          <div class="fcred copyright col-sm-7">
+            {{ "Copyright"|t }} &copy; {{ this_year }} <a href="{{ front_page }}">Simon Fraser University Administrative &amp; Professional Staff Association</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+<!--  { % endif %} -->

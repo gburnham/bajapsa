@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="content-top">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			{% if content %}
+			    {{ content }}
+			{% endif %}
+			{% if apsamisc_contenttype() == "committee" %}
+			   <a href="overview">Overview</a> | <a href="gettingstarted">Getting Started</a> | <a href="documents">Documents</a>
+			{% endif %}
+		</div>
+	</div>
+</div>

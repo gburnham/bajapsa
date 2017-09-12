@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Custom theme implementation for the Members field on the Committee page
+ *
+ */
+#}
+<script>
+	var elem = document.getElementById("committee-member-header-field");
+	{% for item in items %}
+	elem.innerHTML += '{{ item }} ';
+	{% endfor %}
+</script>

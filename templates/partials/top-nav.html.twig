@@ -1,0 +1,25 @@
+    <div class="row">
+      {% if page.header %}
+        <div id="logo" class="site-branding col-sm-4 col-md-2">
+          {{ page.header }}
+        </div>
+      {% endif %}
+      <div class="col-sm-4 col-md-8 mainmenu">
+        <div class="mobilenavi"></div>
+        <nav id="navigation" role="navigation">
+          <div id="main-menu">
+            {% if page.main_navigation %}
+                {{ page.main_navigation }}
+            {% endif %}
+          </div>
+        </nav>
+      </div>
+      <div class="col-sm-4 col-md-2">
+        <div class="account-login">
+      	  {% if page.main_login %}
+              {{ page.main_login }}
+          {% endif %}
+         <!--  <button type="button" class="btn btn-outline-secondary">LOG IN</button> -->
+        </div>
+      </div>
+    </div>

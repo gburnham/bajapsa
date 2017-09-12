@@ -1,0 +1,242 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the Header region.
+ * - page.main_navigation: Items for the Main Navigation region.
+ * - page.preface_first: Items for the Preface First region.
+ * - page.preface_second: Items for the Preface Second region.
+ * - page.preface_third: Items for the Preface Third region.
+ * - page.highlighted: Items for the Highlighted region.
+ * - sidebar_first: Items for the First Sidebar region.
+ * - content_top: Items for the Content Top region.
+ * - help: Items for the Help region.
+ * - content: Items for the Content region.
+ * - footer: Items for the Footer region.
+ * - footer_first: Items for the First Bottom region.
+ * - footer_second: Items for the Second Bottom region.
+ * - footer_third: Items for the Third Bottom region.
+ * - footer_fourth: Items for the Fourth Bottom region.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+<div id="page">
+  <header id="masthead" class="site-header container-fluid" role="banner">
+
+{% include  directory ~ '/templates/partials/top-nav.html.twig' %}
+
+  </header>
+
+  {% if page.preface_first or page.preface_second or page.preface_third %}
+    <div id="preface-area">
+      <div class="container">
+        <div class="row">
+          {% if page.preface_first %}
+            <!-- preface 1 -->
+            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+              {{ page.preface_first }}
+            </div>
+          {% endif %}
+          {% if page.preface_second %}
+            <!-- preface 2 -->
+            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+              {{ page.preface_second }}
+            </div>
+          {% endif %}
+          {% if page.preface_third %}
+          <!-- preface 3 -->
+            <div class="{{ 'preface-block col-sm-' ~ preface_col }}">
+              {{ page.preface_third }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if page.highlighted %}
+    <div id="highlighted-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            {{ page.highlighted }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- page header -->
+  <div class="page-header-container container-fluid">
+
+
+ {% if (apsamisc_contenttype() == "general_page") %}
+        {% set pageType = node.get("field_generalpage_pagetype").target_id %}
+        {% if (pageType == 3) %}
+<!-- this is an About APSA page -->
+  <div class="page-header-section page-header-section-about overlay">
+    <h1 class="page-header-title">About APSA</h1>
+  </div>  
+
+  </div>
+        {% elseif (pageType == 5) %}
+<!-- this is an Agenda -->
+  <div class="page-header-section page-header-section-agenda overlay">
+    <h1 class="page-header-title">Agenda</h1>
+  </div>
+        {% elseif (pageType == 6) %}
+<!-- this is an Agreement page -->
+  <div class="page-header-section page-header-section-agreement overlay">
+    <h1 class="page-header-title">Agreement</h1>
+  </div>
+        {% elseif (pageType == 7) %}
+<!-- this is a Bylaws page -->
+  <div class="page-header-section page-header-section-bylaws overlay">
+    <h1 class="page-header-title">Bylaws</h1>
+  </div>
+        {% elseif (pageType == 8) %}
+<!-- this is a Policy page -->
+  <div class="page-header-section page-header-section-policy overlay">
+    <h1 class="page-header-title">Policy</h1>
+  </div>
+        {% elseif (pageType == 9) %}
+<!-- this is a Minutes page -->
+  <div class="page-header-section page-header-section-minutes overlay">
+    <h1 class="page-header-title">Minutes</h1>
+  </div>
+        {% elseif (pageType == 10) %}
+<!-- this is a News Item -->
+  <div class="page-header-section page-header-section-news overlay">
+    <h1 class="page-header-title">News</h1>
+  </div>
+        {% elseif (pageType == 11) %}
+<!-- this is a Report -->
+  <div class="page-header-section page-header-section-report overlay">
+    <h1 class="page-header-title">Report</h1>
+  </div>
+        {% elseif (pageType == 12) %}
+<!-- this is a Strategic Plan -->
+  <div class="page-header-section page-header-section-strategic_plan overlay">
+    <h1 class="page-header-title">Strategic Plan</h1>
+  </div>
+        {% else %}
+<!-- unknown type - output a generic header -->
+  <div class="page-header-section page-header-section-general overlay">
+    <h1 class="page-header-title">{{ node.label }}</h1>
+    
+  </div>
+        {% endif %}
+{% elseif (apsamisc_contenttype() == "committee") %}
+  <div class="page-header-section page-header-section-general overlay">
+      <h1 class="page-header-title">{{ node.label }}</h1>
+
+    <!-- static placeholder text for purposes of styling this section -->
+
+    <div class="page-header-committee-membership">
+      <div{{ attributes.addClass('page-header-committee-chair') }}>
+        <span class="label-chair">Chair</span>:&nbsp;
+        <span class="label-names" id="committee-chair-header-field"></span>
+      </div>
+      <div{{ attributes.addClass('page-header-committee-chair') }}>
+        <span class="label-members">Members</span>:&nbsp;
+        <span class="label-names" id="committee-member-header-field"></span>
+      </div>
+    </div>
+
+    <!-- #end placeholder text -->
+    
+  </div>
+{% else %}
+  <div class="page-header-section page-header-section-general overlay">
+      <h1 class="page-header-title">{{ node.label }}</h1>
+
+  </div>
+{% endif %}
+
+
+  
+
+  <!-- breadcrumb below header image -->
+
+  {% if page.breadcrumb %}
+    <div id="breadcrumbs">
+      <div class="container">
+        <div class="row">      
+      {{ page.breadcrumb }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- #page header -->
+
+  <div id="main-content">
+    <div class="container">
+      <div class="row">
+        {% if page.sidebar_first %}
+          {% set primary_col = 8 %}
+        {% else %}
+          {% set primary_col = 12 %}
+        {% endif %}
+        <div id="primary" class="{{ 'content-area col-sm-' ~ primary_col }}">
+          <section id="content" role="main" class="clearfix">
+            {% if show_breadcrumbs %}
+              {% if breadcrumb %}
+                <div id="breadcrumbs">
+                  {{ breadcrumb }}
+                </div>
+              {% endif %}
+
+            {% endif %}
+            {{ messages }}
+            {% if page.content_top %}
+              <div id="content_top">
+                {{ page.content_top }}
+              </div>
+            {% endif %}
+            <div id="content-wrap">
+              {{ page.help }}
+              {{ page.content }}
+            </div>
+          </section>
+        </div>
+        {% if page.sidebar_first %}
+          <aside id="sidebar" class="col-sm-4" role="complementary">
+           {{ page.sidebar_first }}
+          </aside>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% include  directory ~ '/templates/partials/footer.html.twig' %}
+ 
+</div>
