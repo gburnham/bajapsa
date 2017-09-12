@@ -1523,9 +1523,11 @@ ul.top-menu > li {
   ul.top-menu > li ul li {
     text-transform: capitalize; }
 
-@media (max-width: 992px) {
-  .top-menu {
-    font-size: 0.875em; } }
+.top-menu {
+  font-size: 0.875em; }
+  @media (max-width: 992px) {
+    .top-menu {
+      font-size: 0.75em; } }
 
 /* account login menu */
 .account-login {
