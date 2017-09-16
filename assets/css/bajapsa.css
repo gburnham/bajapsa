@@ -380,7 +380,8 @@ h1#site-title a:link, h1#site-title a:visited {
   padding: 10px; }
 
 ul.top-menu > li {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  max-width: 125px; }
   ul.top-menu > li ul li {
     text-transform: capitalize; }
 
@@ -1605,7 +1606,8 @@ h2 {
 
 .field-about-committee {
   padding-bottom: 1.1em;
-  color: #003F64; }
+  color: #003F64;
+  line-height: 1.8em; }
 
 .documents-list ul {
   list-style: none; }
@@ -1626,6 +1628,9 @@ h2 {
   padding-bottom: 2em;
   width: 100%;
   border-bottom: #ddd solid 1px; }
+  .view-foundation-document:last-child {
+    border-bottom: none;
+    padding-bottom: 3em; }
 
 .committee-guiding-statement {
   border-top: #498fe1 solid 2px;
