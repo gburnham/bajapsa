@@ -292,6 +292,7 @@ h1#site-title a:link, h1#site-title a:visited {
 
 #main-menu {
   min-width: 450px;
+  width: 100%;
   padding: 0px 0px;
   margin-left: auto;
   margin-top: 22px;
@@ -300,32 +301,29 @@ h1#site-title a:link, h1#site-title a:visited {
   height: 45px;
   border-bottom: none;
   float: left; }
-
-#main-menu ul {
-  width: 100%;
-  float: none;
-  text-align: center;
-  list-style: none;
-  margin: 0;
-  padding: 0 0px; }
-
-#main-menu li {
-  float: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-  font-size: 1.42857em;
-  line-height: 1.42857em;
-  font-weight: 400; }
-
-#main-menu li a {
-  color: #FFF;
-  display: block;
-  margin: 0;
-  padding: 19px 10px 19px 10px;
-  text-decoration: none;
-  position: relative; }
+  #main-menu ul {
+    width: 100%;
+    float: none;
+    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0 0px; }
+  #main-menu li {
+    float: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 1.42857em;
+    line-height: 1.42857em;
+    font-weight: 400; }
+    #main-menu li a {
+      color: #FFF;
+      display: block;
+      margin: 0;
+      padding: 19px 10px 19px 10px;
+      text-decoration: none;
+      position: relative; }
 
 #main-menu li a:hover, #main-menu li a:active, #main-menu a.active, #main-menu > ul > li > a.active-trail {
   color: #eee; }
@@ -381,7 +379,7 @@ h1#site-title a:link, h1#site-title a:visited {
 
 ul.top-menu > li {
   text-transform: uppercase;
-  max-width: 125px; }
+  max-width: 115px; }
   ul.top-menu > li ul li {
     text-transform: capitalize; }
 
@@ -1631,6 +1629,11 @@ h2 {
   .view-foundation-document:last-child {
     border-bottom: none;
     padding-bottom: 3em; }
+  .view-foundation-document .field-content {
+    padding: 20px 20px; }
+    @media (min-width: 992px) {
+      .view-foundation-document .field-content {
+        padding: 20px 50px; } }
 
 .committee-guiding-statement {
   border-top: #498fe1 solid 2px;
@@ -1791,6 +1794,35 @@ h2 {
 
 .copyright {
   font-size: 0.625em; }
+
+/* User Profile */
+.views-field-field-user-first-name {
+  display: inline-block;
+  padding-right: 0.3em; }
+
+.views-field-field-user-last-name {
+  display: inline-block; }
+
+#block-views-block-member-profile-block-1 .field-content {
+  font-weight: 700; }
+
+/* Latest Updates */
+.latest-updates ul {
+  list-style: none; }
+  .latest-updates ul li {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 100%;
+    border-bottom: #ddd solid 1px; }
+    .latest-updates ul li:last-child {
+      border-bottom: none;
+      padding-bottom: 3em; }
+
+.latest-updates .field-content {
+  padding: 20px 20px; }
+  @media (min-width: 992px) {
+    .latest-updates .field-content {
+      padding: 20px 50px; } }
 
 /*--------------------------------------------------------------
 # Misc Drupal
