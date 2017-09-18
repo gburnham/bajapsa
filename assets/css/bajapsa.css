@@ -379,7 +379,7 @@ h1#site-title a:link, h1#site-title a:visited {
 
 ul.top-menu > li {
   text-transform: uppercase;
-  max-width: 115px; }
+  max-width: 215px; }
   ul.top-menu > li ul li {
     text-transform: capitalize; }
 
