@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - bajapsa
-id: bajaspaa_main_navigation
+id: bajapsa_main_navigation
 theme: bajapsa
 region: main_navigation
 weight: 10

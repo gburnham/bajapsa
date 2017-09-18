@@ -5,7 +5,7 @@ dependencies:
     - system
   theme:
     - bajapsa
-id: bajaspaa_content
+id: bajapsa_content
 theme: bajapsa
 region: content
 weight: 0
