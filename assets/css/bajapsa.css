@@ -405,7 +405,7 @@ h1#site-title a:link, h1#site-title a:visited {
 
 ul.top-menu > li {
   text-transform: uppercase;
-  max-width: 115px; }
+  max-width: 215px; }
   ul.top-menu > li ul li {
     text-transform: capitalize; }
 
@@ -419,7 +419,7 @@ ul.top-menu > li {
 .account-login {
   padding: 20px 10px;
   margin: 22px 0px 15px;
-  float: right; }
+}
   .account-login ul {
     list-style: none; }
   .account-login a, .account-login a:visited {
