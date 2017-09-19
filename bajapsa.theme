@@ -43,3 +43,13 @@ function bajapsa_preprocess_breadcrumb(&$variables) {
    );
   }
 }
+
+function bajapsa_preprocess_field(&$variables)
+{
+        $bajapsa_node = \Drupal::routeMatch()->getParameter('node');
+        if ($bajapsa_node) {
+                $variables["bajapsa_nid"] = $bajapsa_node->id();
+        }
+        $variables["bajapsa_uid"] = \Drupal::currentUser()->id();
+}
+

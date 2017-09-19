@@ -15,6 +15,30 @@
       topOptionText: Drupal.t('Select a page')
     });
 
+       // handle the "I will attend this event" check box for signing up to events
+        $("#ba_event_signup").change(function() {
+                var uid = $("#ba_event_signup").attr("data-uid");
+                var nid = $("#ba_event_signup").attr("data-nid");
+                var checked = this.checked;
+
+                // make ajax call passing these three parameters and that php file will set the database stuff
+                $.get("http://dev.apsacentral.ca/data.php?mode=signup&uid=" + uid + "&nid=" + nid + "&status=" + checked, function(data) {
+                });
+        });
+
+        // seeing if we need to check the box for events with signups
+        if ($("#ba_event_signup").length) {
+                var uid = $("#ba_event_signup").attr("data-uid");
+                var nid = $("#ba_event_signup").attr("data-nid");
+                $.get("http://dev.apsacentral.ca/data.php?mode=signout&uid=" + uid + "&nid=" + nid, function(data) {
+                        console.log(data);
+                        if (data == true) {
+                                $("#ba_event_signup").prop("checked", true);
+                        }
+                });
+        }
+
+
   });
 })(jQuery);
 
