@@ -1554,16 +1554,21 @@ ul.inline, ul.links.inline {
       vertical-align: middle;
       text-align: center;
       padding: 30px; }
+      .front-page__section-featured-links .featured-link .fa:hover {
+        color: #2375d4;
+        border: 5px solid #2375d4;
+        transition: .4s; }
       @media screen and (max-width: 768px) {
         .front-page__section-featured-links .featured-link .fa {
           border: 4px solid #498fe1;
           height: 70px;
           width: 70px;
           padding: 15px; } }
-      .front-page__section-featured-links .featured-link .fa:hover {
-        color: #2375d4;
-        border: 5px solid #2375d4;
-        transition: .4s; }
+    .front-page__section-featured-links .featured-link .fa-file-text-o {
+      padding: 30px 25px 30px 35px; }
+      @media screen and (max-width: 768px) {
+        .front-page__section-featured-links .featured-link .fa-file-text-o {
+          padding: 15px 12px 15px 18px; } }
     .front-page__section-featured-links .featured-link h4 {
       max-width: 180px;
       margin: 0 auto; }
