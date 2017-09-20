@@ -418,8 +418,7 @@ ul.top-menu > li {
 /* account login menu */
 .account-login {
   padding: 20px 10px;
-  margin: 22px 0px 15px;
-}
+  margin: 22px 0px 15px; }
   .account-login ul {
     list-style: none; }
   .account-login a, .account-login a:visited {
@@ -1850,10 +1849,15 @@ h2 {
       padding-bottom: 3em; }
 
 .latest-updates .field-content {
-  padding: 20px 20px; }
+  text-align: left;
+  padding: 0px 20px; }
   @media (min-width: 992px) {
     .latest-updates .field-content {
-      padding: 20px 50px; } }
+      padding: 0px 20px; } }
+
+.latest-updates-date {
+  text-align: right;
+  font-size: 26px; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
