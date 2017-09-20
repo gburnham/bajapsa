@@ -1622,6 +1622,9 @@ ul.inline, ul.links.inline {
     font-size: 3.5556em;
     font-weight: 900;
     margin-bottom: -0.24em; }
+  .front-page__section-apsa-is .views-field-title {
+    font-size: 2.875em;
+    font-weight: 900; }
 
 /* Workplace Assistance */
 .front-page__section-assistance {
