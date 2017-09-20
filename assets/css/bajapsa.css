@@ -1837,8 +1837,12 @@ h2 {
   font-weight: 700; }
 
 /* Latest Updates */
+.views-field {
+  text-align: left; }
+
 .latest-updates ul {
-  list-style: none; }
+  list-style: none;
+  padding: 0 0 0 0; }
   .latest-updates ul li {
     padding-top: 2em;
     padding-bottom: 2em;
@@ -1848,16 +1852,29 @@ h2 {
       border-bottom: none;
       padding-bottom: 3em; }
 
+.latest-updates .pager ul li {
+  border-bottom: none; }
+
 .latest-updates .field-content {
-  text-align: left;
-  padding: 0px 20px; }
+  padding: 0px 20px 0px 10px; }
   @media (min-width: 992px) {
     .latest-updates .field-content {
       padding: 0px 20px; } }
 
 .latest-updates-date {
   text-align: right;
-  font-size: 26px; }
+  font-size: 1.375em;
+  line-height: 1.625em; }
+  @media (min-width: 992px) {
+    .latest-updates-date {
+      font-size: 1.625em; } }
+
+.latest-updates-title {
+  font-size: 22px;
+  font-size: 1.375em; }
+  @media (min-width: 992px) {
+    .latest-updates-title {
+      font-size: 1.625em; } }
 
 /*--------------------------------------------------------------
 # Misc Drupal
