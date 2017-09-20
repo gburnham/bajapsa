@@ -1907,6 +1907,34 @@ h2 {
     .latest-updates-title {
       font-size: 1.625em; } }
 
+/* Workshops */
+.workshops .field-content {
+  padding: 0px 20px 0px 10px; }
+  @media (min-width: 992px) {
+    .workshops .field-content {
+      padding: 0px 20px; } }
+
+.workshops-date {
+  text-align: right;
+  font-size: 1.375em;
+  line-height: 1.625em; }
+  @media (min-width: 992px) {
+    .workshops-date {
+      font-size: 1.625em; } }
+
+.workshops-title {
+  font-size: 22px;
+  font-size: 1.375em; }
+  @media (min-width: 992px) {
+    .workshops-title {
+      font-size: 1.625em; } }
+
+.workshops-duration {
+  font-style: italic; }
+
+.workshops-location {
+  font-weight: 700; }
+
 /*--------------------------------------------------------------
 # Misc Drupal
 --------------------------------------------------------------*/
