@@ -20,19 +20,19 @@
 #}
 <div class="row">
 {% if logged_in %}
-<div class="col sm-12">
+<div class="col-sm-12 account-menu-search">
 <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
 <input type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" style="color:black;" placeholder="search" class="form-search form-search-main" />
 </form>
 </div>
-<div class="col sm-12">
+<div class="col-lg-7 account-menu-greeting">
 <a href="/member-profile" data-drupal-link-system-path="user">Hi {{ bajapsa_username }}!</a>
 </div>
-<div class="col sm-12">
+<div class="col-lg-5 account-menu-logout">
 <a href="/user/logout" data-drupal-link-system-path="user/logout">Log out</a>
 </div>
 {% else %}
-<div class="col sm-12">
+<div class="col sm-12 account-menu-login">
 <a href="/user/login" data-drupal-link-system-path="user/login">Log in</a>
 </div>
 {% endif %}
