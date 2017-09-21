@@ -54,6 +54,9 @@
       %}
       <li{{ item.attributes.addClass(item_classes) }}>{# 1. #}
         {# 1. #}
+    {% if menu_level == 0 %}
+        <a {{item.attributes}}>{{item.title}}</a>
+    {% else %}
         {{
           link(
             item.title,
@@ -61,6 +64,7 @@
             item.attributes.removeClass(item_classes).addClass(link_classes)
           )
         }}
+    {% endif %}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name) }} {# 1. #}
         {% endif %}
