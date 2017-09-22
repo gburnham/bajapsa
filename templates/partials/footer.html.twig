@@ -23,27 +23,15 @@
 #}
 
 <!-- begin footer -->
-<!--  { % if page.footer %} 
-    <div id="footer-block" class="apsa-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8">
-            {{ page.footer }}
-          </div>
-        </div>
-      </div>
-    </div>
-  { % endif %}
-
-  { % if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %} -->
+  {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
     <div id="footer" class="apsa-footer">
       <div class="container">
         <div class="row">
-        <!--  { % if page.footer_first %} -->
+         {% if page.footer_first %}
             <div class="{{ 'footer-block col-sm-9' }}">
-              {{ page.footer_first }} 
+              {{ page.footer_first }}
             </div>
-        <!--  { % endif %} -->
+          {% endif %}
           {% if page.footer_fourth %}
             <div class="{{ 'footer-block footer-contact col-sm-2' }}">
               {{ page.footer_fourth }}
@@ -58,4 +46,5 @@
         </div>
       </div>
     </div>
-<!--  { % endif %} -->
+  {% endif %}
+

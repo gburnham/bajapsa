@@ -29,15 +29,25 @@ function bajapsa_preprocess_page(&$variables) {
                         if ($block_content) {
                                 $variables["page"]["main_navigation"] =  $block_content;
                         }
-                        else {
-                                $variables["page"]["main_navigation"] = "no content";
-                        }
-                }
-                else {
-                        $variables["page"]["main_navigation"] = "block is empty";
                 }
         }
-        else {
+        if (($variables["page"]["footer_first"] == "") || is_null($variables["page"]["footer_first"]) || empty($variables["page"]["footer_first"])) {
+                $block = \Drupal::entityManager()->getStorage('block')->load("mainnavigation_2");
+                if (!empty($block)) {
+                        $block_content = \Drupal::entityManager()->getViewBuilder('block')->view($block);
+                        if ($block_content) {
+                                $variables["page"]["footer_first"] =  $block_content;
+                        }
+                }
+        }
+        if (($variables["page"]["footer_fourth"] == "") || is_null($variables["page"]["footer_fourth"]) || empty($variables["page"]["footer_fourth"])) {
+                $block = \Drupal::entityManager()->getStorage('block')->load("contactapsa_4");
+                if (!empty($block)) {
+                        $block_content = \Drupal::entityManager()->getViewBuilder('block')->view($block);
+                        if ($block_content) {
+                                $variables["page"]["footer_fourth"] =  $block_content;
+                        }
+                }
         }
 
 
