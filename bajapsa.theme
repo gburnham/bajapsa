@@ -22,6 +22,24 @@ function bajapsa_preprocess_page(&$variables) {
   $variables['footer_col'] = ($variables['footer_col'] > 0)
     ? (12 / $variables['footer_col']) : 0;
 
+        if (($variables["page"]["main_navigation"] == "") || is_null($variables["page"]["main_navigation"]) || empty($variables["page"]["main_navigation"])) {
+                $block = \Drupal::entityManager()->getStorage('block')->load("bajaspaa_main_navigation");
+                if (!empty($block)) {
+                        $block_content = \Drupal::entityManager()->getViewBuilder('block')->view($block);
+                        if ($block_content) {
+                                $variables["page"]["main_navigation"] =  $block_content;
+                        }
+                        else {
+                                $variables["page"]["main_navigation"] = "no content";
+                        }
+                }
+                else {
+                        $variables["page"]["main_navigation"] = "block is empty";
+                }
+        }
+        else {
+        }
+
 
 }
 
