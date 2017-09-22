@@ -53,6 +53,31 @@ function bajapsa_preprocess_page(&$variables) {
 
 }
 
+function bajapsa_preprocess_node(&$variables)
+{
+        // ideally we should have some sort of check here so we're only doing this when the proper page is loading
+        $block = \Drupal::entityManager()->getStorage("block")->load("views_block__committee_documents_block_1");
+        if (!empty($block)) {
+                $block_content = \Drupal::entityManager()->getViewBuilder("block")->view($block);
+                if ($block_content) {
+                        $variables["committee_documents"] = $block_content;
+                }
+        }
+
+        $block = \Drupal::entityManager()->getStorage("block")->load("gettingstarted");
+        if (!empty($block)) {
+                $block_content = \Drupal::entityManager()->getViewBuilder("block")->view($block);
+                if ($block_content) {
+                        $variables["committee_gettingstarted"] = $block_content;
+                }
+        }
+
+/*
+        \Drupal::logger("bajapsa")->notice("Test Message");
+*/
+}
+
+
 /**
  * Prepares variables for comment templates.
  *

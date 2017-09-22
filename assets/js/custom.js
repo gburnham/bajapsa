@@ -24,6 +24,18 @@
                 $(showDiv).show();
         });
 
+	// show the proper div on page load
+	// if there's a "page=" in the query string, we're in the documents
+	// 	div
+        var queryString = window.location.search;
+        $("#committeegettingstarted").hide();
+        if (queryString.indexOf("page") == -1) {
+                $("#committeedocuments").hide();
+        }
+        else {
+                $("#committeeoverview").hide();
+        }
+
        // handle the "I will attend this event" check box for signing up to events
         $("#ba_event_signup").change(function() {
                 var uid = $("#ba_event_signup").attr("data-uid");
