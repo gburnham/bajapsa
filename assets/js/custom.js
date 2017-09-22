@@ -15,6 +15,15 @@
       topOptionText: Drupal.t('Select a page')
     });
 
+	// show/hide sections of the main committee pages (for committee members only)
+        $(".committeetrigger").click(function() {
+                var showDiv = "#committee" + $(this).attr("data-id");
+                $("#committeegettingstarted").hide();
+                $("#committeeoverview").hide();
+                $("#committeedocuments").hide();
+                $(showDiv).show();
+        });
+
        // handle the "I will attend this event" check box for signing up to events
         $("#ba_event_signup").change(function() {
                 var uid = $("#ba_event_signup").attr("data-uid");
