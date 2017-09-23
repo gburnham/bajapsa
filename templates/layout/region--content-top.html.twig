@@ -14,15 +14,18 @@
  * @ingroup themeable
  */
 #}
+{% if apsamisc_contenttype() == "committee" %}
 <div class="content-top">
-	<div class="row">
-		<div class="col-xs-12 text-center">
-			{% if content %}
-			    {{ content }}
-			{% endif %}
-			{% if apsamisc_contenttype() == "committee" %}
-<!--			   <a href="overview">Overview</a> | <a href="gettingstarted">Getting Started</a> | <a href="documents">Documents</a> -->
-			{% endif %}
-		</div>
-	</div>
+        <div class="row">
+                <div class="col-xs-12 text-center">
+                        {% if content %}
+                            {{ content }}
+                        {% endif %}
+                        {% if apsamisc_userhasrole(user.id) %}
+                           <a class="committeetrigger" data-id="overview">Overview</a> | <a class="committeetrigger" data-id="gettingstarted">Getting Started</a> | <a class="committeetrigger" data-id="documents">Documents</a>
+                        {% endif %}
+                </div>
+        </div>
 </div>
+{% endif %}
+
