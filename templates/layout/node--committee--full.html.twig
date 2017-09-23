@@ -88,12 +88,12 @@
   </div>
 </div>
 <div class="committeemainapgesection" id="committeegettingstarted">
-        {% if bajapsauserhasrole %}
+        {% if apsamisc_userhasrole(user.id) %}
         {{ committee_gettingstarted }}
         {% endif %}
 </div>
 <div class="committeemainpagesection" id="committeedocuments">
-        {% if bajapsauserhasrole %}
+        {% if apsamisc_userhasrole(user.id) %}
         {{ committee_documents }}
         {% endif %}
 </div>
