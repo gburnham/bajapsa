@@ -88,8 +88,14 @@
   </div>
 </div>
 <div class="committeemainapgesection" id="committeegettingstarted">
+        {% if bajapsauserhasrole %}
+        {{ committee_gettingstarted }}
+        {% endif %}
 </div>
 <div class="committeemainpagesection" id="committeedocuments">
+        {% if bajapsauserhasrole %}
+        {{ committee_documents }}
+        {% endif %}
 </div>
 
 </article>
