@@ -53,6 +53,44 @@ function bajapsa_preprocess_page(&$variables) {
 
 }
 
+function bajapsa_debug_variables($vars, $pre = "", $level = 1)
+{
+        \Drupal::logger("bajapsa")->notice("DEBUG Start: [$pre] [$level]");
+        if ((is_object($vars) || is_array($vars)) && $level < 4) {
+                $out = "$pre";
+                for ($lcv = 0; $lcv < $level; $lcv++){
+                        \Drupal::logger("bajapsa")->notice("--- Parsing $pre ---");
+                        $out .= "-";
+                }
+                foreach ($vars as $i => $v) {
+                        if (!is_object($v) && !is_array($v)) {
+                                \Drupal::logger("bajapsa")->notice("[$out] - $i is $v");
+                        }
+                        else {
+                                bajapsa_debug_variables($v, $i, $level + 1);
+                        }
+                }
+        }
+        else {
+                \Drupal::logger("bajapsa")->notice("Simple datatype: $vars");
+        }
+        \Drupal::logger("bajapsa")->notice("DEBUG End: [$pre] [$level]");
+}
+
+function bajapsa_preprocess_item_list__search_results(&$variables)
+{
+        $start = 1;
+
+        $params = explode("&", \Drupal::request()->getQueryString());
+        foreach($params as $param) {
+                $p = explode("=", $param);
+                if ($p[0] == "page"){
+                        $start = ($p[1] * 10) + 1;
+                }
+        }
+        $variables["bajapsa_searchliststart"] = $start;
+}
+
 function bajapsa_preprocess_node(&$variables)
 {
         // ideally we should have some sort of check here so we're only doing this when the proper page is loading
