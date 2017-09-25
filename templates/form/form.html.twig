@@ -10,6 +10,13 @@
  * @see template_preprocess_form()
  */
 #}
-<form{{ attributes }}>
-  {{ children }}
-</form>
+<div class="row">
+	<div class="col-sm-1 col-md-2"></div>
+	<div class="search-form-top col-sm-10 col-md-8">
+		<form{{ attributes }}>
+			{{ children }}
+		</form>
+
+	</div>
+	<div class="col-sm-1 col-md-2"></div>
+</div>
