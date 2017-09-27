@@ -1980,6 +1980,23 @@ h2 {
 .workshops-location {
   font-weight: 700; }
 
+/* pager */
+.pager {
+  padding-top: 1.2em; }
+  .pager li a, .pager li span {
+    background-color: none;
+    border: none;
+    border-radius: 10px; }
+  .pager li a:hover,
+  .pager li a:focus {
+    text-decoration: none;
+    background-color: #ddd; }
+
+li.pager__item.is-active {
+  font-weight: 700; }
+  li.pager__item.is-active a {
+    color: #003F64; }
+
 /*--------------------------------------------------------------
 # Misc Drupal
 --------------------------------------------------------------*/
