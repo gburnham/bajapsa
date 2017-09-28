@@ -645,6 +645,9 @@ a.frmore {
 
 #primary {
   padding-top: 0; }
+  #primary #content {
+    padding-right: 1.0em;
+    padding-left: 1.0em; }
 
 /* -------------- Form Elements  ------------- */
 fieldset {
@@ -1973,14 +1976,18 @@ h2 {
 .workshops-date {
   text-align: right;
   font-size: 1.375em;
-  line-height: 1.625em; }
+  line-height: 1.2em; }
   @media (min-width: 992px) {
     .workshops-date {
       font-size: 1.625em; } }
 
+.workshops-time {
+  font-size: 1.25em; }
+
 .workshops-title {
   font-size: 22px;
-  font-size: 1.375em; }
+  font-size: 1.375em;
+  line-height: 1.2em; }
   @media (min-width: 992px) {
     .workshops-title {
       font-size: 1.625em; } }
@@ -1991,7 +1998,7 @@ h2 {
 .workshops-location {
   font-weight: 700; }
 
-.workshops-details {
+.workshops-details .field-content {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
