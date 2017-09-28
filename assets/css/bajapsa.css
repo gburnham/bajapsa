@@ -305,6 +305,12 @@ h1#site-title a:link, h1#site-title a:visited {
   .c-menu-main > li {
     float: none;
     display: inline-block; }
+  .c-menu-main__item--active-trail {
+    font-weight: 700;
+    border-bottom: #EC1C24 2px solid; }
+
+li ul li.c-menu-main__item--active-trail {
+  border-bottom: none; }
 
 /* Menu */
 .menutoggle {
@@ -371,6 +377,7 @@ h1#site-title a:link, h1#site-title a:visited {
   margin: 0;
   padding: 10px 10px;
   border-top: 1px solid #ddd;
+  border-bottom: none;
   position: relative;
   font-weight: 400; }
 
@@ -1953,6 +1960,10 @@ h2 {
       font-size: 1.625em; } }
 
 /* Workshops */
+.bajapsa-ws-row {
+  padding-top: 0.8em;
+  padding-bottom: 1.0em; }
+
 .workshops .field-content {
   padding: 0px 20px 0px 10px; }
   @media (min-width: 992px) {
@@ -1979,6 +1990,10 @@ h2 {
 
 .workshops-location {
   font-weight: 700; }
+
+.workshops-details {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
 
 /* pager */
 .pager {
