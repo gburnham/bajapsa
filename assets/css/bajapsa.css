@@ -946,7 +946,7 @@ input[type="button"] {
   position: relative;
   font-weight: bold;
   padding: 4px .8em 5px .8em;
-  font-size: 13px; }
+  font-size: 14px; }
 
 button:hover,
 input[type="submit"]:hover,
@@ -1050,6 +1050,11 @@ ol.search-results {
     transition: background-color 0.5s ease; }
     .search-form-top input[type="submit"]:hover {
       background-color: #1c5ca8; }
+
+/* button style overrides */
+.btn {
+  font-size: 16px;
+  font-weight: 700; }
 
 /* front page buttons */
 .btn-front-page {
@@ -1914,10 +1919,12 @@ h2 {
 /* User Profile */
 .views-field-field-user-first-name {
   display: inline-block;
-  padding-right: 0.3em; }
+  padding-right: 0.3em;
+  font-size: 1.25em; }
 
 .views-field-field-user-last-name {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 1.25em; }
 
 #block-views-block-member-profile-block-1 .field-content {
   font-weight: 700; }
