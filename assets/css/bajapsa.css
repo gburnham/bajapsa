@@ -305,9 +305,10 @@ h1#site-title a:link, h1#site-title a:visited {
   .c-menu-main > li {
     float: none;
     display: inline-block; }
-  .c-menu-main__item--active-trail {
-    font-weight: 700;
-    border-bottom: #EC1C24 2px solid; }
+
+#main-menu .c-menu-main__item--active-trail {
+  font-weight: 700;
+  border-bottom: #EC1C24 2px solid; }
 
 li ul li.c-menu-main__item--active-trail {
   border-bottom: none; }
@@ -1058,11 +1059,11 @@ ol.search-results {
 
 /* front page buttons */
 .btn-front-page {
-  font-size: 1.2em;
+  font-size: 1.125em;
   min-width: 160px;
   background-color: #EC1C24;
   border-color: #c51017; }
-  .btn-front-page:hover {
+  .btn-front-page:hover, .btn-front-page:focus, .btn-front-page:active {
     background-color: #c51017;
     border-color: #950d12; }
   .btn-front-page a, .btn-front-page a:visited {
@@ -1134,13 +1135,13 @@ ol.search-results {
 
 .checkbox label input[type="checkbox"] + .cr > .cr-icon,
 .radio label input[type="radio"] + .cr > .cr-icon {
-  transform: scale(2);
+  transform: scale(1.5);
   opacity: 0;
   transition: all .3s ease-in; }
 
 .checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
 .radio label input[type="radio"]:checked + .cr > .cr-icon {
-  transform: scale(1);
+  transform: scale(1.2);
   opacity: 1; }
 
 .checkbox label input[type="checkbox"]:disabled + .cr,
@@ -2074,6 +2075,20 @@ h2 {
 .workshops-details .field-content {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
+
+/* events */
+.apsa-event-title {
+  font-size: 1.25em;
+  font-weight: 700; }
+
+.apsa-event-container {
+  padding-bottom: 2em; }
+
+.apsa-event-checkbox {
+  padding-top: 0.3em;
+  padding-bottom: 0.8em; }
+  .apsa-event-checkbox label {
+    font-weight: 700; }
 
 /* pager */
 .pager {

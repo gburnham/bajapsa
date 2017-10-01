@@ -41,7 +41,7 @@
 {% for item in items %}
         {% if logged_in %}
                 {% if item.content["#markup"] == "Yes" %}
-                        <div class="checkbox">
+                        <div class="checkbox apsa-event-checkbox">
                         	<label for="ba_event_signup">
                         		<input type="checkbox" value="" id="ba_event_signup" data-nid="{{bajapsa_nid}}" data-uid="{{bajapsa_uid}}" name="ba_event_signup">
                         		<span class="cr"><i class="cr-icon fa fa-check"></i></span>
