@@ -1996,6 +1996,9 @@ h2 {
 #block-views-block-member-profile-block-1 .field-content {
   font-weight: 700; }
 
+.apsa-member-profile {
+  padding-bottom: 2em; }
+
 /* Latest Updates */
 .views-field {
   text-align: left; }
