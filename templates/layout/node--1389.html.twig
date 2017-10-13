@@ -1,0 +1,196 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ */
+#}
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      <div{{ author_attributes.addClass('meta') }}>
+        {% trans %}<strong>Posted on:</strong> {{ date }} <strong>By:</strong> {{ author_name }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes }}>
+    {{ content }}
+        <script src="/themes/bajapsa/assets/js/dropzone.js"></script>
+        <script>
+                function runCron()
+                {
+                        jQuery("#page").css("cursor", "wait");
+                        jQuery("#cronLink").css("cursor", "wait");
+                        jQuery.get("http://dev.apsacentral.ca/cron/piWfuzOjg8n51TcLJ7__tO4bdrKchMRDfVRPSG_qnndkhmGZmWWzlqu5TPDurjcRFjlsiSDOsQ");
+                        location.reload();
+                }
+
+                function checkStatus()
+                {
+                        // lets find out what's happening with the file upload
+                        jQuery("#file-upload-dropzone").hide();
+                        jQuery.get("/data.php?mode=import", function(data) {
+                                // console.log(data["status"]);
+                                // broken, upload, proceed, processing (percent)
+                                switch(data["status"]) {
+                                        case "upload":
+                                                jQuery("#file-upload-dropzone").show();
+                                                jQuery("#file-upload-out").hide();
+                                                break;
+                                        case "proceed":
+                                                // console.log(data["new"]);
+                                                if ((data["new"] != null) || (data["delete"] != null) || (data["update"] != null)) {
+                                                        var header = "<div class='row'><div class='col-xs-6'><span id='completeimport' class='btn btn-primary'>Complete Import</span></div><div class='col-xs-6'><span id='resetimport' class='btn btn-danger'>Reset Import</span></div>";
+                                                        var footer = "</div>";
+                                                        header += "<div class='col-xs-4'><h2>Add Users</h2>";
+                                                        if (data["new"] != null) {
+                                                                for (var username in data["new"]) {
+                                                                        header += "<div>" + data["new"][username] + "</div>";
+                                                                }
+                                                        }
+                                                        header += "</div>";
+                                                        header += "<div class='col-xs-4'><h2>Update Users</h2>";
+                                                        if (data["update"] != null) {
+                                                                for (var username in data["update"]) {
+                                                                        header += "<div>" + data["update"][username] + "</div>";
+                                                                }
+                                                        }
+                                                        header += "</div>";
+                                                        header += "<div class='col-xs-4'><h2>Delete Users</h2>";
+                                                        if (data["delete"] != null) {
+                                                                for (var username in data["delete"]) {
+                                                                        header += "<div>" + data["delete"][username] + "</div>";
+                                                                }
+                                                        }
+                                                        header += "</div>";
+                                                        jQuery("#file-upload-out").html(header + footer);
+                                                        jQuery("#completeimport").click(function() {
+                                                                jQuery("#page").css("cursor", "wait");
+                                                                jQuery("#completeimport").css("cursor", "wait");
+                                                                jQuery.get("/data.php?mode=import-complete", function(data) {
+                                                                        jQuery("#page").css("cursor", "default");
+                                                                        alert("Import complete!");
+                                                                        location.reload();
+                                                                });
+                                                        });
+                                                        jQuery("#resetimport").click(function() {
+                                                                if (confirm("Are you sure you want to reset this import?")) {
+                                                                        jQuery.get("/data.php?mode=import-reset", function(data) {
+                                                                                alert("Import reset.");
+                                                                                location.reload();
+                                                                        });
+                                                                }
+                                                        });
+                                                }
+                                                break;
+                                        case "processing":
+                                                jQuery("#file-upload-out").html("Uploaded file is being processed - hint: running <a id='cronLink' href='javascript:runCron()'>Cron</a> can expedite this process");
+                                                break;
+                                        default:
+                                                jQuery("#file-upload-out").html("An error has occured - please contact technical support");
+                                }
+                        });
+                }
+                Dropzone.options.fileUploadDropzone = {
+                        dictDefaultMessage: "Drop a .csv file here, or click to select one from your computer",
+                        maxFiles: 1,
+                        init: function() {
+                                        this.on("success",
+                                                function(file) {
+                                                        console.log(file.name);
+                                                        jQuery("#file-upload-dropzone").hide();
+                                                        jQuery("#file-upload-out").html("File uploaded. Processing has begun. You can close this window, or <a href='/content/user-import'>reload</a> to check the progress");
+                                                        jQuery("#file-upload-out").show();
+                                                }
+                                        );
+                                },
+                        accept: function(file, done) {
+                                        jQuery("#file-upload-dropzone").hide();
+                                        jQuery("#file-upload-out").html("Starting to process file, this may take a couple of minutes (do not close this window)");
+                                        jQuery("#file-upload-out").show();
+                                        done();
+                                }
+                };
+        </script>
+<style>
+.dz-preview {
+        display: none;
+}
+</style>
+
+        <form action="/data.php" class="dropzone" id="file-upload-dropzone"><input type="hidden" name="mode" value="user-import" /></form>
+        <div id="file-upload-out">Please wait...</div>
+  </div>
+
+</article>
+
+
