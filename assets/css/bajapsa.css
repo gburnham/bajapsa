@@ -2110,6 +2110,56 @@ li.pager__item.is-active {
   li.pager__item.is-active a {
     color: #003F64; }
 
+/* Add Committee Page Form */
+.node-committee-page-form .form-details {
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 15px; }
+
+.node-committee-page-form .form-item label {
+  display: block;
+  font-size: 1.0em; }
+
+.node-committee-page-form .form-item.form-item-body-0-format label {
+  display: inline-block; }
+
+.node-committee-page-form .description {
+  font-size: 0.75em;
+  font-style: italic; }
+
+.node-committee-page-form .form-text, .node-committee-page-form .form-textarea {
+  width: 100%;
+  max-width: 500px; }
+
+.node-committee-page-form details h3 {
+  display: inline-block;
+  padding-left: 6px; }
+
+.node-committee-page-form .vertical-tabs, .node-committee-page-form .vertical-tabs__menu, .node-committee-page-form .vertical-tabs__menu-item, .node-committee-page-form .filter-wrapper {
+  border: none; }
+
+.node-committee-page-form .filter-help a {
+  padding: 0 12px 0; }
+  .node-committee-page-form .filter-help a:after {
+    right: -10px; }
+
+.node-committee-page-form .field--name-field-committeepage-image {
+  border-bottom: 1px solid #ccc; }
+
+.node-committee-page-form .field--name-field-committeepage-files {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
+
+.link-edit-summary {
+  border: none;
+  background-color: white;
+  color: #498fe1;
+  padding: 0 6px;
+  font-size: 0.75em;
+  font-weight: 400; }
+  .link-edit-summary:hover, .link-edit-summary:focus, .link-edit-summary:active {
+    color: #003F64; }
+
 /*--------------------------------------------------------------
 # Misc Drupal
 --------------------------------------------------------------*/
