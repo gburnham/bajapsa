@@ -1941,6 +1941,7 @@ h2 {
   background-color: #003F64;
   background-image: -webkit-linear-gradient(170deg, #EC1C24 40%, #003F64 40%);
   color: white;
+  margin-top: 1.25em;
   /* ul li .c-menu-main__link {
 		text-transform: uppercase;
 		font-weight: 700;
@@ -2138,6 +2139,26 @@ li.pager__item.is-active {
 .node-committee-page-form .vertical-tabs, .node-committee-page-form .vertical-tabs__menu, .node-committee-page-form .vertical-tabs__menu-item, .node-committee-page-form .filter-wrapper {
   border: none; }
 
+.node-committee-page-form .vertical-tabs {
+  margin: 0 0 0 0; }
+
+.node-committee-page-form .vertical-tabs__menu {
+  float: none;
+  width: 100%;
+  margin: 0 0 10px 0; }
+
+.node-committee-page-form .vertical-tabs__menu-item a {
+  padding-left: 0; }
+
+.node-committee-page-form .vertical-tabs__menu-item-title {
+  font-size: 20px;
+  color: #666;
+  font-weight: normal;
+  padding: 10px 0 15px; }
+
+.node-committee-page-form .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-item-title {
+  color: #666; }
+
 .node-committee-page-form .filter-help a {
   padding: 0 12px 0; }
   .node-committee-page-form .filter-help a:after {
@@ -2159,6 +2180,9 @@ li.pager__item.is-active {
   font-weight: 400; }
   .link-edit-summary:hover, .link-edit-summary:focus, .link-edit-summary:active {
     color: #003F64; }
+
+.search-form-top .node-committee-page-form .form-submit {
+  min-width: 7.75em; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
