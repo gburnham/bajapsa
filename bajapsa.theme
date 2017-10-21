@@ -8,36 +8,38 @@
 function bajapsa_form_alter(&$form, $form_state, $form_id)
 {
 	if ($form_id == "node_committee_page_form") {
-		// if this user is only on one comiittee, then set the value of the field
-		$thisUser = \Drupal::currentUser();
-		$userRoles = $thisUser->getRoles();
-		if (count($userRoles) == 2) {
-			// this user is on exactly one committee
-			$database = new \PDO("mysql:dbname=apsa", "gburnham", "scsi101");
-			$committee = ucwords(str_replace("_", " ", $userRoles[1]));
-			$query = "select tid from aaad8_taxonomy_term_field_data where name=:committee";
-			$values = array("committee" => $committee);
-			$statement = $database->prepare($query);
-			$statement->execute($values);
-			if ($data = $statement->fetch()) {
-				$committee .= "(" . $data["tid"] . ")";
-				$form['field_committteepage_committee']['widget'][0]['target_id']['#value'] = $committee;
-			}
-			else {
-				// this is probably one of the special committees, so...
-				$setValue = false;
-				switch ($committee) {
-					case "Salary Benefits Committee":
-						$committee = "Salary and Benefits Committee(22)";
-						$setValue = true;
-						break;
-					case "Nominating Association Development Committee":
-						$committee = "Moninating and Association Development Committee(21)";
-						$setValue = true;
-						break;
-				}
-				if ($setValue) {
+		if ($form['field_committteepage_committee']['widget'][0]['target_id']['#value'] == "") {
+			// if this user is only on one comiittee, then set the value of the field
+			$thisUser = \Drupal::currentUser();
+			$userRoles = $thisUser->getRoles();
+			if (count($userRoles) == 2) {
+				// this user is on exactly one committee
+				$database = new \PDO("mysql:dbname=apsa", "gburnham", "scsi101");
+				$committee = ucwords(str_replace("_", " ", $userRoles[1]));
+				$query = "select tid from aaad8_taxonomy_term_field_data where name=:committee";
+				$values = array("committee" => $committee);
+				$statement = $database->prepare($query);
+				$statement->execute($values);
+				if ($data = $statement->fetch()) {
+					$committee .= "(" . $data["tid"] . ")";
 					$form['field_committteepage_committee']['widget'][0]['target_id']['#value'] = $committee;
+				}
+				else {
+					// this is probably one of the special committees, so...
+					$setValue = false;
+					switch ($committee) {
+						case "Salary Benefits Committee":
+							$committee = "Salary and Benefits Committee(22)";
+							$setValue = true;
+							break;
+						case "Nominating Association Development Committee":
+							$committee = "Moninating and Association Development Committee(21)";
+							$setValue = true;
+							break;
+					}
+					if ($setValue) {
+						$form['field_committteepage_committee']['widget'][0]['target_id']['#value'] = $committee;
+					}
 				}
 			}
 		}
