@@ -14,7 +14,7 @@
  * @see template_preprocess_details()
  */
 #}
-<details{{ attributes }}>
+<details{{ attributes.removeAttribute("open") }}>
   {%
     set summary_classes = [
       required ? 'js-form-required',
