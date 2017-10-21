@@ -1843,7 +1843,7 @@ h2 {
 
 /* ----- sidebar ----- */
 #sidebar {
-  padding-top: 100px; }
+  padding-top: 0px; }
 
 .sidebar-contact {
   margin: 2em 0 2em 1.5em;
@@ -1999,6 +1999,39 @@ h2 {
 
 .apsa-member-profile {
   padding-bottom: 2em; }
+
+.user-logout {
+  float: right;
+  padding-right: 5%; }
+  .user-logout .btn {
+    border: #498fe1 1px solid; }
+    .user-logout .btn:visited, .user-logout .btn:focus {
+      background-color: white; }
+    .user-logout .btn:hover {
+      background-color: #dde8f5; }
+    .user-logout .btn:focus {
+      background-color: #8db3df; }
+
+#block-views-block-user-content-block-1,
+#block-views-block-user-events-block-1 {
+  background-color: #dde8f5;
+  padding: 0.5em 1em 1.25em;
+  margin-bottom: 1.25em; }
+  #block-views-block-user-content-block-1 h2,
+  #block-views-block-user-events-block-1 h2 {
+    font-size: 20px; }
+  #block-views-block-user-content-block-1 ul,
+  #block-views-block-user-events-block-1 ul {
+    list-style: none; }
+  #block-views-block-user-content-block-1 .item-list ul,
+  #block-views-block-user-events-block-1 .item-list ul {
+    padding-left: 0; }
+  #block-views-block-user-content-block-1 .user-content-item,
+  #block-views-block-user-events-block-1 .user-content-item {
+    font-size: 16px; }
+
+#block-views-block-user-events-block-1 {
+  background-color: #fbc9cb; }
 
 /* Latest Updates */
 .views-field {
