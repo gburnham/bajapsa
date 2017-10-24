@@ -2039,6 +2039,30 @@ h2 {
 #block-views-block-user-events-block-1 {
   background-color: #fbc9cb; }
 
+/* General Description Class */
+.description {
+  font-size: 0.75em;
+  font-style: italic; }
+
+/* Admin Functions */
+.new-committee-entry #committeeName {
+  width: 500px;
+  border: #555 solid 1px; }
+
+.new-committee-entry .description {
+  padding-bottom: 1.2em; }
+
+.new-committee-entry .btn {
+  border: #498fe1 1px solid;
+  background: #fff;
+  color: #498fe1; }
+  .new-committee-entry .btn:visited, .new-committee-entry .btn:focus {
+    background-color: white; }
+  .new-committee-entry .btn:hover {
+    background-color: #dde8f5; }
+  .new-committee-entry .btn:focus {
+    background-color: #8db3df; }
+
 /* Latest Updates */
 .views-field {
   text-align: left; }
