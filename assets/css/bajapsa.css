@@ -1052,6 +1052,9 @@ ol.search-results {
     .search-form-top input[type="submit"]:hover {
       background-color: #1c5ca8; }
 
+.committee-guiding-statement .search-form-top {
+  padding-top: 0; }
+
 /* button style overrides */
 .btn {
   font-size: 16px;
@@ -2148,62 +2151,62 @@ li.pager__item.is-active {
     color: #003F64; }
 
 /* Add Committee Page Form */
-.node-committee-page-form .form-details {
+.node-committee-page-form .form-details, .node-committee-page-edit-form .form-details {
   text-align: left;
   padding-top: 10px;
   padding-bottom: 15px; }
 
-.node-committee-page-form .form-item label {
+.node-committee-page-form .form-item label, .node-committee-page-edit-form .form-item label {
   display: block;
   font-size: 1.0em; }
 
-.node-committee-page-form .form-item.form-item-body-0-format label {
+.node-committee-page-form .form-item.form-item-body-0-format label, .node-committee-page-edit-form .form-item.form-item-body-0-format label {
   display: inline-block; }
 
-.node-committee-page-form .description {
+.node-committee-page-form .description, .node-committee-page-edit-form .description {
   font-size: 0.75em;
   font-style: italic; }
 
-.node-committee-page-form .form-text, .node-committee-page-form .form-textarea {
+.node-committee-page-form .form-text, .node-committee-page-form .form-textarea, .node-committee-page-edit-form .form-text, .node-committee-page-edit-form .form-textarea {
   width: 100%;
   max-width: 500px; }
 
-.node-committee-page-form details h3 {
+.node-committee-page-form details h3, .node-committee-page-edit-form details h3 {
   display: inline-block;
   padding-left: 6px; }
 
-.node-committee-page-form .vertical-tabs, .node-committee-page-form .vertical-tabs__menu, .node-committee-page-form .vertical-tabs__menu-item, .node-committee-page-form .filter-wrapper {
+.node-committee-page-form .vertical-tabs, .node-committee-page-form .vertical-tabs__menu, .node-committee-page-form .vertical-tabs__menu-item, .node-committee-page-form .filter-wrapper, .node-committee-page-edit-form .vertical-tabs, .node-committee-page-edit-form .vertical-tabs__menu, .node-committee-page-edit-form .vertical-tabs__menu-item, .node-committee-page-edit-form .filter-wrapper {
   border: none; }
 
-.node-committee-page-form .vertical-tabs {
+.node-committee-page-form .vertical-tabs, .node-committee-page-edit-form .vertical-tabs {
   margin: 0 0 0 0; }
 
-.node-committee-page-form .vertical-tabs__menu {
+.node-committee-page-form .vertical-tabs__menu, .node-committee-page-edit-form .vertical-tabs__menu {
   float: none;
   width: 100%;
   margin: 0 0 10px 0; }
 
-.node-committee-page-form .vertical-tabs__menu-item a {
+.node-committee-page-form .vertical-tabs__menu-item a, .node-committee-page-edit-form .vertical-tabs__menu-item a {
   padding-left: 0; }
 
-.node-committee-page-form .vertical-tabs__menu-item-title {
+.node-committee-page-form .vertical-tabs__menu-item-title, .node-committee-page-edit-form .vertical-tabs__menu-item-title {
   font-size: 20px;
   color: #666;
   font-weight: normal;
   padding: 10px 0 15px; }
 
-.node-committee-page-form .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-item-title {
+.node-committee-page-form .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-item-title, .node-committee-page-edit-form .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-item-title {
   color: #666; }
 
-.node-committee-page-form .filter-help a {
+.node-committee-page-form .filter-help a, .node-committee-page-edit-form .filter-help a {
   padding: 0 12px 0; }
-  .node-committee-page-form .filter-help a:after {
+  .node-committee-page-form .filter-help a:after, .node-committee-page-edit-form .filter-help a:after {
     right: -10px; }
 
-.node-committee-page-form .field--name-field-committeepage-image {
+.node-committee-page-form .field--name-field-committeepage-image, .node-committee-page-edit-form .field--name-field-committeepage-image {
   border-bottom: 1px solid #ccc; }
 
-.node-committee-page-form .field--name-field-committeepage-files {
+.node-committee-page-form .field--name-field-committeepage-files, .node-committee-page-edit-form .field--name-field-committeepage-files {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc; }
 
