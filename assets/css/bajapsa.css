@@ -436,7 +436,9 @@ ul.top-menu > li {
   .account-login ul {
     list-style: none; }
   .account-login a, .account-login a:visited {
-    color: #498fe1; }
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.875em; }
   .account-login a:hover {
     color: #8db3df; }
   .account-login > li {
@@ -649,6 +651,9 @@ a.frmore {
   #primary #content {
     padding-right: 1.0em;
     padding-left: 1.0em; }
+  #primary.content-area-front #content {
+    padding-right: 0;
+    padding-left: 0; }
 
 /* -------------- Form Elements  ------------- */
 fieldset {
@@ -1636,7 +1641,6 @@ ul.inline, ul.links.inline {
 
 /* ----- front page ----- */
 .front-page__section {
-  padding: 3rem 0 4rem;
   font-size: 1.1rem; }
 
 /*
@@ -1684,45 +1688,45 @@ ul.inline, ul.links.inline {
 */
 /* Featured Links */
 .front-page__section-featured-links {
-  color: #498fe1;
+  color: #8db3df;
   background: #003F64;
   text-align: center;
   padding: 3rem 0 4rem; }
   .front-page__section-featured-links h4, .front-page__section-featured-links h4 a {
-    color: #498fe1; }
+    color: #8db3df; }
     .front-page__section-featured-links h4:hover, .front-page__section-featured-links h4 a:hover {
-      color: #2375d4;
+      color: #6598d4;
       transition: .4s; }
   .front-page__section-featured-links .featured-link {
     margin: 0 auto;
     padding: 20px; }
     .front-page__section-featured-links .featured-link .fa {
-      font-size: 48px;
-      font-size: 3rem;
+      font-size: 57px;
+      font-size: 3.5625rem;
       margin-bottom: 1rem;
-      color: #498fe1;
+      color: #8db3df;
       border-radius: 100%;
-      border: 5px solid #498fe1;
+      border: 5px solid #8db3df;
       height: 120px;
       width: 120px;
       vertical-align: middle;
       text-align: center;
-      padding: 30px; }
+      padding: 26px 26px 28px 24px; }
       .front-page__section-featured-links .featured-link .fa:hover {
-        color: #2375d4;
-        border: 5px solid #2375d4;
+        color: #6598d4;
+        border: 5px solid #6598d4;
         transition: .4s; }
       @media screen and (max-width: 768px) {
         .front-page__section-featured-links .featured-link .fa {
-          border: 4px solid #498fe1;
+          border: 4px solid #8db3df;
           height: 70px;
           width: 70px;
           padding: 15px; }
           .front-page__section-featured-links .featured-link .fa:hover {
-            border: 4px solid #2375d4;
+            border: 4px solid #6598d4;
             transition: .4s; } }
     .front-page__section-featured-links .featured-link .fa-file-text-o {
-      padding: 30px 25px 30px 35px; }
+      padding: 28px 22px 30px 30px; }
       @media screen and (max-width: 768px) {
         .front-page__section-featured-links .featured-link .fa-file-text-o {
           padding: 15px 10px 15px 20px; } }
@@ -1762,7 +1766,8 @@ ul.inline, ul.links.inline {
   color: #333; }
   .front-page__section-assistance h2 {
     color: #498fe1;
-    font-weight: 700; }
+    font-weight: 900;
+    font-size: 2em; }
 
 /* ----- page ----- */
 h1.page-title {
@@ -1901,7 +1906,7 @@ h2 {
 
 .slider-text-container {
   padding: 20px 50px 35px;
-  background-color: rgba(255, 255, 255, 0.8); }
+  background-color: rgba(255, 255, 255, 0.9); }
 
 .views-field-type {
   margin-left: -50px;
@@ -1919,7 +1924,8 @@ h2 {
 
 .views-field-title {
   font-size: 26px;
-  text-align: center; }
+  text-align: center;
+  font-weight: 900; }
   .views-field-title a, .views-field-title a:visited {
     color: #003F64; }
   .views-field-title a:hover {
@@ -1928,12 +1934,13 @@ h2 {
 .views-field-view-node {
   text-align: center;
   text-transform: uppercase;
-  margin-top: 10px; }
+  width: 60px;
+  margin: 20px auto 0; }
 
 .btn-slider-link {
   background-color: #EC1C24;
-  padding-right: 20px;
-  padding-left: 20px; }
+  padding-right: 25px;
+  padding-left: 25px; }
   .btn-slider-link:hover {
     background-color: #c51017; }
   .btn-slider-link a {
@@ -1985,10 +1992,14 @@ h2 {
 
 .fa-twitter {
   font-size: 1.8rem;
-  color: #fff; }
+  color: #fff;
+  padding-top: 5px; }
 
 .copyright {
   font-size: 0.625em; }
+
+.footer-contact-menu {
+  font-size: 0.875em; }
 
 /* User Profile */
 .views-field-field-user-first-name {
