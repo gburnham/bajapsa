@@ -75,107 +75,131 @@
 
   <div{{ content_attributes }}>
     {{ content }}
-	<style>
-		.elementid    {cursor: pointer};
-		#eventsOldNew {cursor: pointer};
-	</style>
-	<script>
-		var statusURL = "/data.php?mode=events";
-		var showOld = false;
-		function runCron()
-		{
-			jQuery("#page").css("cursor", "wait");
-			jQuery("#cronLink").css("cursor", "wait");
-			jQuery.get("http://dev.apsacentral.ca/cron/piWfuzOjg8n51TcLJ7__tO4bdrKchMRDfVRPSG_qnndkhmGZmWWzlqu5TPDurjcRFjlsiSDOsQ");
-			location.reload();
-		}
+        <style>
+                .clickable    {cursor: pointer};
+                .elementid    {cursor: pointer};
+                #eventsOldNew {cursor: pointer};
+                .closeSignups {cursor: pointer};
+        </style>
+        <script>
+                var statusURL = "/data.php?mode=events";
+                var showOld = false;
+                function runCron()
+                {
+                        jQuery("#page").css("cursor", "wait");
+                        jQuery("#cronLink").css("cursor", "wait");
+                        jQuery.get("http://dev.apsacentral.ca/cron/piWfuzOjg8n51TcLJ7__tO4bdrKchMRDfVRPSG_qnndkhmGZmWWzlqu5TPDurjcRFjlsiSDOsQ");
+                        location.reload();
+                }
 
-		function showEvents()
-		{
-			var thisURL = statusURL;
-			jQuery("#eventTable").html("");
-			if (showOld) {
-				thisURL += "&oldEvents";
-				jQuery("#eventsOldNew").html("Showing past events (click to switch to viewing upcoming events)");
-			}
-			else {
-				jQuery("#eventsOldNew").html("Showing upcoming events (click to switch to viewing past events)");
-			}
-			jQuery.get(thisURL, function(data) {
-				var indexes = Object.keys(data);
-				if (indexes.length > 0) {
-					indexes.forEach(function (arrayElement) {
-						var theElement = data[arrayElement];
-						var theIndex = arrayElement;
-						var signups = (theElement[1] == true ? "Yes" : "No");
-						var elementEntry = "<div class='row' id='element_" + theIndex + "'>";
-						elementEntry += "<div class='col-xs-3 elementid' data-id='" + theIndex + "' id='elementid_" + theIndex + "'>" + theIndex + "</div>";
-						elementEntry += "<div class='col-xs-3' id='elementtitle_" + theIndex + "'>" + theElement[0] + "</div>";
-						elementEntry += "<div class='col-xs-3' id='elementsignups_" + theIndex + "'>" + signups  + "</div>";
-						elementEntry += "<div class='col-xs-3' id='elementattendees_" + theIndex + "'>" + theElement[2] + "</div>";
-						elementEntry += "</div>";
-						jQuery("#eventTable").html(jQuery("#eventTable").html() + elementEntry);
-					});
-				}
-				jQuery(".elementid").click(function() {
-					var eid = jQuery(this).attr("data-id");
-					jQuery.get("/data.php?mode=events&details=" + eid, function(data) {
-						var after = "#element_" + eid;
-						var thisElement = "element_" + eid + "_details";
+                function showEvents()
+                {
+                        var thisURL = statusURL;
+                        jQuery("#eventTable").html("");
+                        if (showOld) {
+                                thisURL += "&oldEvents";
+                                jQuery("#eventsOldNew").html("Showing past events (click to switch to viewing upcoming events)");
+                        }
+                        else {
+                                jQuery("#eventsOldNew").html("Showing upcoming events (click to switch to viewing past events)");
+                        }
+                        jQuery.get(thisURL, function(data) {
+                                var indexes = Object.keys(data);
+                                if (indexes.length > 0) {
+                                        indexes.forEach(function (arrayElement) {
+                                                var theElement = data[arrayElement];
+                                                var theIndex = arrayElement;
+                                                var signups = (theElement[1] == true ? "Yes" : "No");
+                                                var elementEntry = "<div class='row event-details' id='element_" + theIndex + "'>";
+                                                elementEntry += "<div class='col-xs-3 elementid em_event_id' data-id='" + theIndex + "' id='elementid_" + theIndex + "'>" + theIndex + "</div>";
+                                                elementEntry += "<div class='col-xs-3 em_event_title' id='elementtitle_" + theIndex + "'>" + theElement[0] + "</div>";
+                                                elementEntry += "<div class='col-xs-3 em_signups_allowed' id='elementsignups_" + theIndex + "'>" + signups  + "</div>";
+                                                elementEntry += "<div class='col-xs-3 em_signups_num' id='elementattendees_" + theIndex + "'>" + theElement[2] + "</div>";
+                                                elementEntry += "</div>";
+                                                jQuery("#eventTable").html(jQuery("#eventTable").html() + elementEntry);
+                                        });
+                                }
+                                jQuery(".elementid").click(function() {
+                                        var eid = jQuery(this).attr("data-id");
+                                        jQuery.get("/data.php?mode=events&details=" + eid, function(data) {
+                                                var after = "#element_" + eid;
+                                                var thisElement = "element_" + eid + "_details";
 
-						// if this element already exists, remove it
-						if (jQuery("#" + thisElement).length != 0) {
-							jQuery("#" + thisElement).remove();
-						}
-						else {
-							thisElement = "<div class='row' id='" + thisElement + "'>";
-							thisElement += "<div class='col-xs-1'></div><div class='col-xs-4 closeSignups' data-id='" + eid +"'>Close signups for this event</div><div class='col-xs-4'>Print PDF checklist for attendees</div><div class='col-xs-3'>Send email to all attendees</div>";
-							thisElement += "<div class='col-xs-1'></div>";
-							thisElement += "<div class='col-xs-3'>Name</div>";
-							thisElement += "<div class='col-xs-4'>Username</div>";
-							thisElement += "<div class='col-xs-4'>Email</div>";
-							if (data["signup_count"] > 0) {
-								var indexes = Object.keys(data["signups"]);
-								indexes.forEach(function (arrayElement) {
-									var name = data["signups"][arrayElement][0];
-									var username = data["signups"][arrayElement][1];
-									var email = data["signups"][arrayElement][2];
-									thisElement += "<div class='col-xs-1'><input type='checkbox' id='user_" + arrayElement + "' class='eventAttend'></div>";
-									thisElement += "<div class='col-xs-3'>" + name + "</div>";
-									thisElement += "<div class='col-xs-4'>" + username + "</div>";
-									thisElement += "<div class='col-xs-4'>" + email + "</div>";
-								});
-							}
-							else {
-								thisElement += "<div class='col-xs-10 offset-xs-2'><em>No signups yet</em></div>";
-							}
-							thisElement += "</div>";
-							jQuery(thisElement).insertAfter(jQuery(after));
-							jQuery(".closeSignups").click(function() {
-								var eid = jQuery(this).attr("data-id");
-								jQuery.get("/data.php?mode=events&closeSignups=" + eid, function(data) {
-									jQuery("#elementsignups_" + eid).html("No");
-								});
-							});
-						}
-					});
-				});
-			});
-		}
+                                                // if this element already exists, remove it
+                                                if (jQuery("#" + thisElement).length != 0) {
+                                                        jQuery("#" + thisElement).remove();
+                                                }
+                                                else {
+                                                        thisElement = "<div class='row' id='" + thisElement + "'>";
+                                                        thisElement += "<div class='col-xs-1'></div><div class='col-xs-4 clickable closeSignups' data-id='" + eid +"'>Close signups for this event</div><div class='col-xs-4 clickable saveAttended' data-id='" + eid +"'>Save Attendance</div><div class='col-xs-3'><a href='/node/add/event_email?eid=" + eid + "'>Send email to all attendees</a></div>";
+                                                        thisElement += "<div class='col-xs-1'>Attended</div>";
+                                                        thisElement += "<div class='col-xs-3'>Name</div>";
+                                                        thisElement += "<div class='col-xs-4'>Username</div>";
+                                                        thisElement += "<div class='col-xs-4'>Email</div>";
+                                                        if (data["signup_count"] > 0) {
+                                                                var indexes = Object.keys(data["signups"]);
+                                                                indexes.forEach(function (arrayElement) {
+                                                                        var name = data["signups"][arrayElement][0];
+                                                                        var username = data["signups"][arrayElement][1];
+                                                                        var email = data["signups"][arrayElement][2];
+                                                                        var attended = "";
+                                                                        if (data["signups"][arrayElement][3] == 1) {
+                                                                                attended = " checked ";
+                                                                        }
+                                                                        thisElement += "<div class='col-xs-1'><input type='checkbox' class='" + eid + "_attend' id='user_" + arrayElement + "' class='eventAttend' " + attended + "></div>";
+                                                                        thisElement += "<div class='col-xs-3'>" + name + "</div>";
+                                                                        thisElement += "<div class='col-xs-4'>" + username + "</div>";
+                                                                        thisElement += "<div class='col-xs-4'>" + email + "</div>";
+                                                                });
+                                                        }
+                                                        else {
+                                                                thisElement += "<div class='col-xs-10 offset-xs-2'><em>No signups</em></div>";
+                                                        }
+                                                        thisElement += "</div>";
+                                                        jQuery(thisElement).insertAfter(jQuery(after));
+                                                        jQuery(".saveAttended").click(function() {
+                                                                var eid = jQuery(this).attr("data-id");
+                                                                var theClass = "." + eid + "_attend";
+                                                                var attended = new Array();
+                                                                jQuery(theClass).each(function(index, element) {
+                                                                        if (jQuery(element).is(":checked")) {
+                                                                                var elemID = element.getAttribute("id");
+                                                                                var elemArray = elemID.split("_");
+                                                                                attended.push(elemArray[1]);
+                                                                        }
+                                                                });
+                                                                var queryString = "?mode=events&saveAttended=" + eid + "&attended=" + attended.toString();
+                                                                jQuery.get("/data.php" + queryString, function(data) {
+                                                                        var thisElement = "#element_" + data["eid"] + "_details";
+                                                                        jQuery(thisElement).hide(500);
+                                                                        jQuery(thisElement).show(500);
+                                                                });
+                                                        });
+                                                        jQuery(".closeSignups").click(function() {
+                                                                var eid = jQuery(this).attr("data-id");
+                                                                jQuery.get("/data.php?mode=events&closeSignups=" + eid, function(data) {
+                                                                        jQuery("#elementsignups_" + eid).html("No");
+                                                                });
+                                                        });
+                                                }
+                                        });
+                                });
+                        });
+                }
 
-		function checkStatus()
-		{
-			jQuery("#eventsOldNew").click(function() {
-				showOld = !showOld;
-				showEvents();
-			});
-			showEvents();
-		}
-	</script>
+                function checkStatus()
+                {
+                        jQuery("#eventsOldNew").click(function() {
+                                showOld = !showOld;
+                                showEvents();
+                        });
+                        showEvents();
+                }
+        </script>
 <div class="row">
-<div class="col-xs-6 offset-xs-3" style="cursor: pointer;" id="eventsOldNew">Showing upcoming events (click to switch to viewing past events)</div>
+<div class="col-xs-6 offset-xs-3 show-events" style="cursor: pointer;" id="eventsOldNew">Showing upcoming events (click to switch to viewing past events)</div>
 </div>
-<div class="row">
+<div class="row event-heading">
 <div class="col-xs-3"><b>Event ID (click for details)</b></div>
 <div class="col-xs-3"><b>Event Title</b></div>
 <div class="col-xs-3"><b>Signups Allowed?</b></div>

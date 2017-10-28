@@ -33,7 +33,7 @@ function bajapsa_form_alter(&$form, $form_state, $form_id)
 							$setValue = true;
 							break;
 						case "Nominating Association Development Committee":
-							$committee = "Moninating and Association Development Committee(21)";
+							$committee = "Nominating and Association Development Committee(21)";
 							$setValue = true;
 							break;
 					}
