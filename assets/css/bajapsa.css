@@ -306,7 +306,7 @@ h1#site-title a:link, h1#site-title a:visited {
     float: none;
     display: inline-block; }
 
-#main-menu .c-menu-main__item--active-trail {
+#main-menu .c-menu-main__item--active-trail.sf-with-ul {
   font-weight: 700;
   border-bottom: #EC1C24 2px solid; }
 
@@ -2119,45 +2119,47 @@ h2 {
   padding-top: 0.8em;
   padding-bottom: 1.0em; }
 
-.workshops .field-content {
-  padding: 0px 20px 0px 10px; }
-  @media (min-width: 992px) {
-    .workshops .field-content {
-      padding: 0px 20px; } }
-
-.workshops-date {
-  text-align: right;
-  font-size: 1.375em;
-  line-height: 1.2em; }
-  @media (min-width: 992px) {
-    .workshops-date {
-      font-size: 1.625em; } }
-
-.workshops-time {
-  font-size: 1.25em; }
-
-.workshops-title {
-  font-size: 22px;
-  font-size: 1.375em;
-  line-height: 1.2em; }
-  @media (min-width: 992px) {
-    .workshops-title {
-      font-size: 1.625em; } }
-
-.workshops-duration {
-  font-style: italic; }
-
-.workshops-location {
-  font-weight: 700; }
-
-.workshops-details .field-content {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em; }
+.workshops {
+  /*
+	&-location {
+		font-weight: 700;
+	}
+*/ }
+  .workshops .field-content {
+    padding: 0px 20px 0px 10px; }
+    @media (min-width: 992px) {
+      .workshops .field-content {
+        padding: 0px 20px; } }
+  .workshops-date {
+    text-align: right;
+    font-size: 1.25em;
+    line-height: 1.2em; }
+    @media (min-width: 992px) {
+      .workshops-date {
+        position: relative;
+        top: 4px; } }
+  .workshops-time {
+    font-size: 1.25em; }
+  .workshops-title {
+    font-size: 22px;
+    font-size: 1.375em;
+    line-height: 1.2em; }
+    @media (min-width: 992px) {
+      .workshops-title {
+        font-size: 1.625em; } }
+  .workshops-duration {
+    font-style: italic; }
+  .workshops-details .field-content {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em; }
+  .workshops .collapse {
+    padding-top: 15px; }
 
 /* events */
 .apsa-event-title {
-  font-size: 1.25em;
-  font-weight: 700; }
+  font-size: 1.625em;
+  font-weight: 700;
+  color: #003F64; }
 
 .apsa-event-container {
   padding-bottom: 2em; }
