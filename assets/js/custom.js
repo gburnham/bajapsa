@@ -36,6 +36,13 @@
                 $("#committeeoverview").hide();
         }
 
+	// remove the &nbsp; from the font awesome elements
+	$(".fa").each(function(index, element) {
+		if ($(element).html() == "&nbsp;") {
+			$(element).html("");
+		}
+	}
+
        // handle the "I will attend this event" check box for signing up to events
         $("#ba_event_signup").change(function() {
                 var uid = $("#ba_event_signup").attr("data-uid");
