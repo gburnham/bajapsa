@@ -1701,8 +1701,8 @@ ul.inline, ul.links.inline {
     margin: 0 auto;
     padding: 20px; }
     .front-page__section-featured-links .featured-link .fa {
-      font-size: 57px;
-      font-size: 3.5625rem;
+      font-size: 58px;
+      font-size: 3.625rem;
       margin-bottom: 1rem;
       color: #8db3df;
       border-radius: 100%;
@@ -1711,7 +1711,7 @@ ul.inline, ul.links.inline {
       width: 120px;
       vertical-align: middle;
       text-align: center;
-      padding: 26px 26px 28px 24px; }
+      padding: 26px 25px 28px 24px; }
       .front-page__section-featured-links .featured-link .fa:hover {
         color: #6598d4;
         border: 5px solid #6598d4;
@@ -1721,15 +1721,17 @@ ul.inline, ul.links.inline {
           border: 4px solid #8db3df;
           height: 70px;
           width: 70px;
-          padding: 15px; }
+          padding: 13px; }
           .front-page__section-featured-links .featured-link .fa:hover {
             border: 4px solid #6598d4;
             transition: .4s; } }
     .front-page__section-featured-links .featured-link .fa-file-text-o {
-      padding: 28px 22px 30px 30px; }
+      font-size: 58px;
+      font-size: 3.625rem;
+      padding: 26px 28px 30px 30px; }
       @media screen and (max-width: 768px) {
         .front-page__section-featured-links .featured-link .fa-file-text-o {
-          padding: 15px 10px 15px 20px; } }
+          padding: 15px 14px 15px 16px; } }
     .front-page__section-featured-links .featured-link h4 {
       max-width: 180px;
       margin: 0 auto; }
@@ -2219,7 +2221,8 @@ li.pager__item.is-active {
   font-size: 1.0em; }
 
 .node-committee-page-form .js-form-item-checkbox label, .node-committee-page-edit-form .js-form-item-checkbox label {
-  display: inline-block; }
+  display: inline-block;
+  font-size: 1.0em; }
 
 .node-committee-page-form .form-item.form-item-body-0-format label, .node-committee-page-edit-form .form-item.form-item-body-0-format label {
   display: inline-block; }
