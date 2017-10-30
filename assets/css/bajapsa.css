@@ -1581,33 +1581,29 @@ ul.inline, ul.links.inline {
   background-position: left center;
   position: relative;
   vertical-align: top;
-  color: #fff; }
+  color: #fff;
+  /* Orange Subheaders */
+  /* Red Subheaders */
+  /* Green Subheaders */
+  /* Blue Subheaders */ }
   @media screen and (max-width: 768px) {
     .page-header-section {
       height: 200px; } }
-  .page-header-section-about .page-header-title {
+  .page-header-section-about .page-header-title, .page-header-section-agenda .page-header-title, .page-header-section-agreement .page-header-title, .page-header-section-policy .page-header-title, .page-header-section-news .page-header-title {
     text-shadow: 4px 4px 4px rgba(124, 62, 1, 0.7); }
-  .page-header-section-about:before {
+  .page-header-section-about:before, .page-header-section-agenda:before, .page-header-section-agreement:before, .page-header-section-policy:before, .page-header-section-news:before {
     background-color: rgba(200, 100, 2, 0.7); }
-  .page-header-section-agenda:before {
-    background-color: rgba(200, 100, 2, 0.7); }
-  .page-header-section-agreement:before {
-    background-color: rgba(200, 100, 2, 0.7); }
-  .page-header-section-bylaws:before {
+  .page-header-section-bylaws .page-header-title, .page-header-section-minutes .page-header-title {
+    text-shadow: 4px 4px 4px rgba(173, 14, 21, 0.7); }
+  .page-header-section-bylaws:before, .page-header-section-minutes:before {
     background-color: rgba(236, 28, 36, 0.7); }
-  .page-header-section-policy:before {
-    background-color: rgba(200, 100, 2, 0.7); }
-  .page-header-section-minutes:before {
-    background-color: rgba(236, 28, 36, 0.7); }
-  .page-header-section-news:before {
-    background-color: rgba(200, 100, 2, 0.7); }
+  .page-header-section-report .page-header-title {
+    text-shadow: 4px 4px 4px rgba(36, 72, 0, 0.7); }
   .page-header-section-report:before {
     background-color: rgba(74, 148, 1, 0.7); }
-  .page-header-section-strategic_plan:before {
-    background-color: rgba(0, 63, 100, 0.7); }
-  .page-header-section-general .page-header-title {
+  .page-header-section-general .page-header-title, .page-header-section-strategic_plan .page-header-title {
     text-shadow: 4px 4px 4px rgba(0, 63, 100, 0.7); }
-  .page-header-section-general:before {
+  .page-header-section-general:before, .page-header-section-strategic_plan:before {
     background-color: rgba(73, 143, 225, 0.7); }
 
 .overlay:before {
@@ -2214,9 +2210,16 @@ li.pager__item.is-active {
   padding-top: 10px;
   padding-bottom: 15px; }
 
-.node-committee-page-form .form-item label, .node-committee-page-edit-form .form-item label {
+.node-committee-page-form .js-form-type-textarea label,
+.node-committee-page-form .js-form-type-entity-autocomplete label,
+.node-committee-page-form .js-form-type-textfield label, .node-committee-page-edit-form .js-form-type-textarea label,
+.node-committee-page-edit-form .js-form-type-entity-autocomplete label,
+.node-committee-page-edit-form .js-form-type-textfield label {
   display: block;
   font-size: 1.0em; }
+
+.node-committee-page-form .js-form-item-checkbox label, .node-committee-page-edit-form .js-form-item-checkbox label {
+  display: inline-block; }
 
 .node-committee-page-form .form-item.form-item-body-0-format label, .node-committee-page-edit-form .form-item.form-item-body-0-format label {
   display: inline-block; }
