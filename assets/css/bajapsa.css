@@ -1585,6 +1585,8 @@ ul.inline, ul.links.inline {
   @media screen and (max-width: 768px) {
     .page-header-section {
       height: 200px; } }
+  .page-header-section-about .page-header-title {
+    text-shadow: 4px 4px 4px rgba(124, 62, 1, 0.7); }
   .page-header-section-about:before {
     background-color: rgba(200, 100, 2, 0.7); }
   .page-header-section-agenda:before {
@@ -1603,6 +1605,8 @@ ul.inline, ul.links.inline {
     background-color: rgba(74, 148, 1, 0.7); }
   .page-header-section-strategic_plan:before {
     background-color: rgba(0, 63, 100, 0.7); }
+  .page-header-section-general .page-header-title {
+    text-shadow: 4px 4px 4px rgba(0, 63, 100, 0.7); }
   .page-header-section-general:before {
     background-color: rgba(73, 143, 225, 0.7); }
 
@@ -1833,6 +1837,23 @@ h2 {
     @media (min-width: 992px) {
       .view-foundation-document .field-content {
         padding: 20px 50px; } }
+
+.fd-row .fa {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 16px;
+  margin: 10px;
+  padding: 6px 7px;
+  border: 4px #666 solid; }
+
+.fd-row h3 {
+  font-size: 1.5em;
+  font-weight: 700; }
+
+.fd-header h1 {
+  font-size: 2.0em;
+  font-weight: 700; }
 
 .committee-guiding-statement {
   border-top: #498fe1 solid 2px;
