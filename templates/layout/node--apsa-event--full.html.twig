@@ -78,4 +78,21 @@
     {{ content }}
 
   </div>
+<div id="eventModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h4 class="modal-title">{{ label }}</h4>
+                        </div>
+                        <div class="modal-body">
+                                <p id="modal-body-text">You've signed up for the event! Do you want email with a calendar attachment?</p>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-default apsa-event-email" data-dismiss="modal" data-send-email="1">Yes please!</button>&nbsp;&nbsp;
+                                <button type="button" class="btn btn-secondary apsa-event-email" data-dismiss="modal" data-send-email="0">No thanks, I'll manage my calendar myself.</button>
+                        </div>
+                </div>
+        </div>
+</div>
 </article>
+
