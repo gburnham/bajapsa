@@ -1919,6 +1919,35 @@ h2 {
   margin-bottom: 0; }
   .jumbotron p {
     font-size: 18px; }
+  .jumbotron .slider-controls {
+    position: absolute;
+    z-index: 100;
+    bottom: 35px;
+    width: 100%; }
+    .jumbotron .slider-controls a {
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      padding: 17px 0;
+      color: #ccc;
+      transition: color 0.3s;
+      cursor: pointer; }
+    .jumbotron .slider-controls a:hover {
+      color: black; }
+    .jumbotron .slider-controls .slider-button {
+      background-color: none;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px; }
+    .jumbotron .slider-controls .slider-button-prev {
+      float: left; }
+    .jumbotron .slider-controls .slider-button-next {
+      float: right;
+      position: relative;
+      right: 30px; }
+    .jumbotron .slider-controls .fa {
+      font-size: 1.25em;
+      padding: 0 10px; }
 
 .container .jumbotron, .container-fluid .jumbotron {
   border-radius: 0; }
@@ -1967,11 +1996,9 @@ h2 {
     .btn-slider-link a:hover {
       color: #eee; }
 
-/* ----- footer ----- */
+/* footer */
 .apsa-footer {
-  padding: 30px 0px 40px 0px;
-  background-color: #003F64;
-  background-image: -webkit-linear-gradient(170deg, #EC1C24 40%, #003F64 40%);
+  padding: 30px 0px 0px 0px;
   color: white;
   margin-top: 1.25em;
   /* ul li .c-menu-main__link {
@@ -1995,8 +2022,8 @@ h2 {
   .apsa-footer ul ul {
     margin-bottom: 1.8em; }
   .apsa-footer ul li {
-    margin-right: 20px;
-    min-width: 200px;
+    margin-right: 7%;
+    min-width: 180px;
     vertical-align: top; }
 
 .apsa-footer-bottom {
@@ -2012,13 +2039,56 @@ h2 {
 .fa-twitter {
   font-size: 1.8rem;
   color: #fff;
-  padding-top: 5px; }
+  padding-top: 10px; }
 
 .copyright {
-  font-size: 0.625em; }
+  font-size: 0.625em;
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .footer-contact-menu {
-  font-size: 0.875em; }
+  font-size: 0.875em;
+  line-height: 2.0em; }
+
+/* apsa-footer-new */
+.apsa-footer {
+  color: white;
+  margin-top: 1.25em; }
+
+.row-footer {
+  background: #EC1C24;
+  display: table;
+  width: 100%; }
+
+.apsa-footer-left {
+  padding: 30px 0px 40px 5%;
+  background-image: -webkit-linear-gradient(170deg, #EC1C24 65px, #003F64 65px); }
+
+.apsa-footer-right {
+  padding: 30px 0px 10px 5%;
+  background-color: #EC1C24; }
+
+/* .set-height {
+  height: 300px;
+} */
+.copyright-narrow {
+  display: none; }
+
+.copyright-wide {
+  display: block; }
+
+@media screen and (max-width: 767px) {
+  /* .set-height {
+	  height: auto;    
+  } */
+  .apsa-footer-left {
+    padding: 30px 0px 10px 5%;
+    background-image: none;
+    background: #003F64; }
+  .copyright-narrow {
+    display: block; }
+  .copyright-wide {
+    display: none; } }
 
 /* User Profile */
 .views-field-field-user-first-name {
@@ -2124,21 +2194,40 @@ h2 {
   line-height: 1.625em; }
   @media (min-width: 992px) {
     .latest-updates-date {
-      font-size: 1.625em; } }
+      font-size: 1.75em; } }
 
 .latest-updates-title {
   font-size: 22px;
-  font-size: 1.375em; }
+  font-size: 1.375em;
+  line-height: 1.625em; }
   @media (min-width: 992px) {
     .latest-updates-title {
-      font-size: 1.625em; } }
+      font-size: 28px;
+      font-size: 1.75em; } }
 
+/*
+	&-date {
+		text-align: right;
+		font-size: 1.25em;
+		line-height: 1.2em;
+
+		@media (min-width: 992px) {
+			position: relative;
+			top: 6px;
+		}
+	}
+	*/
 /* Workshops */
 .bajapsa-ws-row {
   padding-top: 0.8em;
   padding-bottom: 1.0em; }
 
 .workshops {
+  /*
+	&-duration {
+		font-style: italic;
+	}
+*/
   /*
 	&-location {
 		font-weight: 700;
@@ -2156,18 +2245,21 @@ h2 {
     @media (min-width: 992px) {
       .workshops-date {
         position: relative;
-        top: 4px; } }
-  .workshops-time {
+        top: 6px; } }
+  .workshops-time, .workshops-duration {
     font-size: 1.25em; }
+  @media (min-width: 992px) {
+    .workshops-duration {
+      position: relative;
+      left: -50px; } }
   .workshops-title {
     font-size: 22px;
     font-size: 1.375em;
     line-height: 1.2em; }
     @media (min-width: 992px) {
       .workshops-title {
-        font-size: 1.625em; } }
-  .workshops-duration {
-    font-style: italic; }
+        font-size: 28px;
+        font-size: 1.75em; } }
   .workshops-details .field-content {
     padding-top: 0.5em;
     padding-bottom: 0.5em; }
