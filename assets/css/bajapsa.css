@@ -1761,15 +1761,20 @@ ul.inline, ul.links.inline {
   .front-page__section-apsa-is .views-field-title {
     font-size: 2.875em;
     font-weight: 900; }
+  .front-page__section-apsa-is p {
+    line-height: 1.4em; }
 
 /* Workplace Assistance */
 .front-page__section-assistance {
   background-color: #fff;
-  color: #333; }
+  color: #333;
+  padding-top: 1em; }
   .front-page__section-assistance h2 {
     color: #498fe1;
     font-weight: 900;
     font-size: 2em; }
+  .front-page__section-assistance p {
+    line-height: 1.6em; }
 
 /* ----- page ----- */
 h1.page-title {
@@ -1785,7 +1790,8 @@ h2 {
 
 .committee-subtitle {
   color: #003F64;
-  font-weight: 600; }
+  font-weight: 600;
+  font-size: 1.75em; }
 
 .committee-block .item-list {
   font-size: 1.2857em;
@@ -1803,7 +1809,7 @@ h2 {
 .field-about-committee {
   padding-bottom: 1.1em;
   color: #003F64;
-  line-height: 1.8em; }
+  line-height: 1.5em; }
 
 .committeetrigger {
   cursor: pointer; }
@@ -1836,22 +1842,30 @@ h2 {
       .view-foundation-document .field-content {
         padding: 20px 50px; } }
 
-.fd-row .fa {
-  height: 80px;
-  width: 80px;
-  background-color: white;
-  border-radius: 16px;
-  margin: 10px;
-  padding: 6px 7px;
-  border: 4px #666 solid; }
-
-.fd-row h3 {
-  font-size: 1.5em;
-  font-weight: 700; }
+.fd-row {
+  display: flex;
+  padding: 1em 1.2em 0; }
+  .fd-row .fa {
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border-radius: 16px;
+    margin: 10px;
+    padding: 6px 7px;
+    border: 4px #666 solid; }
+  .fd-row h3 {
+    font-size: 1.5em;
+    font-weight: 700; }
 
 .fd-header h1 {
   font-size: 2.0em;
   font-weight: 700; }
+
+.fd-text {
+  padding-left: 2.4em; }
+
+.fd-text-left {
+  padding-right: 2.4em; }
 
 .committee-guiding-statement {
   border-top: #498fe1 solid 2px;
@@ -1996,6 +2010,31 @@ h2 {
     .btn-slider-link a:hover {
       color: #eee; }
 
+/* line-height tests */
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_1 p {
+  line-height: 1.8em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_2 p {
+  line-height: 1.6em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_3 p {
+  line-height: 1.4em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_4 p {
+  line-height: 1.2em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_5 p {
+  line-height: 1.8em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_6 p {
+  line-height: 1.6em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_7 p {
+  line-height: 1.4em; }
+
+.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_0 p {
+  line-height: 1.2em; }
+
 /* footer */
 .apsa-footer {
   padding: 30px 0px 0px 0px;
@@ -2020,7 +2059,7 @@ h2 {
     text-transform: capitalize;
     font-weight: 500; }
   .apsa-footer ul ul {
-    margin-bottom: 1.8em; }
+    margin-bottom: 1.0em; }
   .apsa-footer ul li {
     margin-right: 7%;
     min-width: 180px;
@@ -2061,7 +2100,7 @@ h2 {
   width: 100%; }
 
 .apsa-footer-left {
-  padding: 30px 0px 40px 5%;
+  padding: 30px 0px 20px 5%;
   background-image: -webkit-linear-gradient(170deg, #EC1C24 65px, #003F64 65px); }
 
 .apsa-footer-right {
@@ -2077,14 +2116,16 @@ h2 {
 .copyright-wide {
   display: block; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 970px) {
   /* .set-height {
 	  height: auto;    
   } */
   .apsa-footer-left {
     padding: 30px 0px 10px 5%;
     background-image: none;
-    background: #003F64; }
+    background: #003F64; } }
+
+@media screen and (max-width: 767px) {
   .copyright-narrow {
     display: block; }
   .copyright-wide {
@@ -2378,6 +2419,32 @@ li.pager__item.is-active {
 
 .search-form-top .node-committee-page-form .form-submit {
   min-width: 7.75em; }
+
+/* Leadership and Committees page */
+.lc-header {
+  background-color: #dde8f5;
+  padding: 8px 2.8em 12px;
+  margin-bottom: 1.2em; }
+
+.lc-icon {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 16px;
+  margin: 10px 0;
+  padding: 6px 7px;
+  border: 4px #666 solid; }
+
+.lc-text {
+  padding-left: 2.4em; }
+
+.lc-row {
+  display: flex;
+  padding: 1em 1.2em 0; }
+
+/* ASPA AGM Pages */
+.block-views-block-upcoming-agm-block-1 h2 {
+  font-size: 2.0em; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
