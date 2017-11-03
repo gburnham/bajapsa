@@ -96,3 +96,14 @@
     }, false );
   }
 })();
+
+function activateMenu(menuName)
+{
+        var activeClass = "c-menu-main__item--active-trail";
+        jQuery("a").each(function(index) {
+                if (jQuery(this).hasClass("c-menu-main__item") && (jQuery(this).text() == menuName)) {
+                        jQuery(this).addClass(activeClass);
+                }
+        });
+}
+
