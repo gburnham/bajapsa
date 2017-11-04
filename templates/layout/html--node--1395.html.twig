@@ -36,15 +36,15 @@
   </head>
   <body{{ attributes }} onload="checkStatus();">
     {{ page_top }}
-    {{ page }}
+    {{ page }} 
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
   </body>
 {% else %}
-        <script>
-        window.location.href = "/";
-        </script>
-        </head>
+	<script>
+	window.location.href = "/";
+	</script>
+	</head>
 {% endif %}
 </html>
 
