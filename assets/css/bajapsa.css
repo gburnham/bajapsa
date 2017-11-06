@@ -2443,8 +2443,42 @@ li.pager__item.is-active {
   padding: 1em 1.2em 0; }
 
 /* ASPA AGM Pages */
-.block-views-block-upcoming-agm-block-1 h2 {
-  font-size: 2.0em; }
+#block-views-block-upcoming-agm-block-1 {
+  z-index: 10; }
+  #block-views-block-upcoming-agm-block-1 header {
+    text-align: left; }
+    #block-views-block-upcoming-agm-block-1 header h2 {
+      font-size: 2.0em; }
+  #block-views-block-upcoming-agm-block-1 footer {
+    padding-top: 1em; }
+  #block-views-block-upcoming-agm-block-1 .apsa_agm_reasons {
+    padding: 2em; }
+    #block-views-block-upcoming-agm-block-1 .apsa_agm_reasons h4, #block-views-block-upcoming-agm-block-1 .apsa_agm_reasons ol li {
+      font-size: 1.25em; }
+
+.apsa-agm-next-meeting {
+  padding: 2em;
+  background: #c8f09d; }
+  .apsa-agm-next-meeting .views-field {
+    text-align: center; }
+  .apsa-agm-next-meeting .views-field-title {
+    color: #003F64;
+    padding-bottom: 0.5em; }
+  .apsa-agm-next-meeting .field-content p, .apsa-agm-next-meeting .views-field-field-agm-date p {
+    padding-bottom: 0.75em;
+    margin-bottom: 0; }
+
+#block-views-block-agm-archive-block-1 {
+  z-index: 0; }
+  #block-views-block-agm-archive-block-1 h2 {
+    padding-bottom: 1.5em;
+    border-bottom: #ddd solid 1px; }
+
+.apsa-agm-archive-listing {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 100%;
+  border-bottom: #ddd solid 1px; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
