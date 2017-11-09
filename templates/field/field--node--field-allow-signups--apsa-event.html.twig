@@ -39,20 +39,21 @@
  */
 #}
 {% for item in items %}
-        {% if logged_in %}
-                {% if item.content["#markup"] == "Yes" %}
-                        <div class="checkbox apsa-event-checkbox">
+        {% if item.content["#markup"] == "Yes" %}
+        	{% if logged_in %}
+                        <div class="checkbox apsa-event-checkbox hidden" id="apsa-event-checkbox-signup">
                                 <label for="ba_event_signup">
                                         <input type="checkbox" value="" data-toggle="modal" data-target="#eventModal" id="ba_event_signup" data-nid="{{bajapsa_nid}}" data-uid="{{bajapsa_uid}}" name="ba_event_signup">
                                         <span class="cr"><i class="cr-icon fa fa-check"></i></span>
                                         I will attend this event
                                 </label>
                         </div>
+                        <div class="hidden" id="apsa-event-checkbox-full">
+                                Sorry, this event is full.
+                        </div>
                 {% else %}
-                        <!-- not yes -->
+                        <div>Log in if you want to sign up for this event!</div>
                 {% endif %}
-        {% else %}
-                <!-- not logged in -->
         {% endif %}
 {% endfor %}
 
