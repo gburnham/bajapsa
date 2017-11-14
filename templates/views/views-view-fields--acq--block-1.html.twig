@@ -42,5 +42,7 @@
         {% endif %}
         {% set lcv = lcv + 1 %}
 {%- endfor %}
-<span data-toggle="collapse" data-target="#acq_{{ uid }}">{{ title }}</span>
-<span class="collapse" id="acq_{{ uid }}">{{ body }}</span>
+<!-- <div class="apsa-acq-answer-row"> -->
+<span class="apsa-acq-question" data-toggle="collapse" data-target="#acq_{{ uid }}">{{ title }}</span>
+<span class="apsa-acq-answer collapse" id="acq_{{ uid }}">{{ body }}</span>
+<!-- </div> -->

@@ -600,7 +600,7 @@ a.frmore {
 /* Content
 ----------------------------------------------- */
 .node h2.title a, h1.page-title {
-  color: #000000;
+  color: #606060;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -634,7 +634,7 @@ a.frmore {
 
 #sidebar .block > h2 {
   font-size: 20px;
-  color: #000;
+  color: #606060;
   margin-bottom: 15px;
   text-transform: uppercase;
   font-weight: bold; }
@@ -1093,6 +1093,31 @@ ol.search-results {
     background-color: transparent;
     border-color: #ccc; }
 
+.btn-outline-primary {
+  color: #007bff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #007bff; }
+  .btn-outline-primary:hover {
+    color: #003F64;
+    border-color: #003F64;
+    background-color: rgba(255, 255, 255, 0.8); }
+  .btn-outline-primary:visited, .btn-outline-primary:focus {
+    color: #007bff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #007bff; }
+
+/* back-up in case btn-sm style is missing from Bootstrap CSS */
+.btn-sm {
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border-radius: .2rem; }
+
+/* a.btn {
+  color: #fff;
+} */
 /* checkbox styles */
 /* modified from: https://bootsnipp.com/snippets/featured/animated-radios-amp-checkboxes-nojs */
 /*
@@ -1778,12 +1803,12 @@ ul.inline, ul.links.inline {
 
 /* ----- page ----- */
 h1.page-title {
-  color: #003F64;
+  color: #606060;
   text-align: left; }
 
 h2 {
   font-weight: 600;
-  color: #003F64; }
+  color: #606060; }
 
 .page-text-main p:first-child {
   font-size: 1.2857em; }
@@ -1936,8 +1961,8 @@ h2 {
   .jumbotron .slider-controls {
     position: absolute;
     z-index: 100;
-    bottom: 35px;
-    width: 100%; }
+    bottom: 9%;
+    width: 50px; }
     .jumbotron .slider-controls a {
       text-decoration: none;
       display: inline-block;
@@ -1950,15 +1975,15 @@ h2 {
       color: black; }
     .jumbotron .slider-controls .slider-button {
       background-color: none;
-      border-radius: 50%;
       height: 50px;
       width: 50px; }
-    .jumbotron .slider-controls .slider-button-prev {
+    .jumbotron .slider-controls.slider-button-prev {
       float: left; }
-    .jumbotron .slider-controls .slider-button-next {
+    .jumbotron .slider-controls.slider-button-next {
       float: right;
-      position: relative;
       right: 30px; }
+      .jumbotron .slider-controls.slider-button-next a {
+        text-align: right; }
     .jumbotron .slider-controls .fa {
       font-size: 1.25em;
       padding: 0 10px; }
@@ -1967,11 +1992,11 @@ h2 {
   border-radius: 0; }
 
 .slider-text-container {
-  padding: 20px 50px 35px;
+  padding: 20px 65px 35px;
   background-color: rgba(255, 255, 255, 0.9); }
 
 .views-field-type {
-  margin-left: -50px;
+  margin-left: -65px;
   margin-bottom: 25px;
   position: relative; }
 
@@ -2021,7 +2046,7 @@ h2 {
   line-height: 1.4em; }
 
 .jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_4 p {
-  line-height: 1.2em; }
+  line-height: 1.6em; }
 
 .jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_5 p {
   line-height: 1.8em; }
@@ -2033,7 +2058,14 @@ h2 {
   line-height: 1.4em; }
 
 .jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_0 p {
-  line-height: 1.2em; }
+  line-height: 1.6em; }
+
+.jumbotron .views-row {
+  display: flex;
+  flex-direction: column;
+  height: 297px; }
+  .jumbotron .views-row .views-field-field-event-details {
+    flex-grow: 4; }
 
 /* footer */
 .apsa-footer {
@@ -2442,6 +2474,42 @@ li.pager__item.is-active {
   display: flex;
   padding: 1em 1.2em 0; }
 
+/* APSA Event Management */
+.apsa-event-management {
+  /*	.checkbox-attended {
+		text-align: center;
+		cursor: pointer;
+	} */ }
+  .apsa-event-management .event-details-buttons {
+    text-align: center; }
+  .apsa-event-management .row {
+    padding: 1em 0; }
+    .apsa-event-management .row.event-details {
+      border-top: 1px solid #ddd; }
+      .apsa-event-management .row.event-details:hover {
+        background: #f9f9f9; }
+      .apsa-event-management .row.event-details:last-child {
+        border-bottom: 1px solid #ddd; }
+  .apsa-event-management .row.event-details-attendee-details {
+    padding: 0.5em 0; }
+    .apsa-event-management .row.event-details-attendee-details:hover {
+      background: #dddddd; }
+  .apsa-event-management .event-heading {
+    font-size: 0.875em; }
+
+.show-events {
+  text-align: center; }
+
+.row.event-details-attendees {
+  background: #eeeeee;
+  padding: 10px 20px 20px; }
+
+.em_event_id {
+  cursor: pointer; }
+
+.checkbox-attended input {
+  cursor: pointer; }
+
 /* ASPA AGM Pages */
 #block-views-block-upcoming-agm-block-1 {
   z-index: 10; }
@@ -2479,6 +2547,23 @@ li.pager__item.is-active {
   padding-bottom: 2em;
   width: 100%;
   border-bottom: #ddd solid 1px; }
+
+/* individual Past AGM page */
+.apsa-agm-past-meeting {
+  text-align: center;
+  padding: 2em;
+  background: #dde8f5; }
+  .apsa-agm-past-meeting span {
+    padding-bottom: 0.75em;
+    line-height: 2.8em; }
+
+.agm-location {
+  padding-bottom: 1.5em; }
+  .agm-location span p {
+    display: inline-block;
+    margin-bottom: 0px; }
+    .agm-location span p:nth-child(2) {
+      display: block; }
 
 /*--------------------------------------------------------------
 # Misc Drupal

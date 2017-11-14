@@ -39,31 +39,31 @@
  */
 #}
 
-<div class="row">
-  <div class="col-xs-12 apsa-agm-past-meeting">
-  {% if label_hidden %}
-    {% if multiple %}
-      <div{{ attributes }}>
-        {% for item in items %}
-          <div{{ item.attributes }}>{{ item.content }}</div>
-        {% endfor %}
-      </div>
-    {% else %}
-      {% for item in items %}
-        <div{{ attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    {% endif %}
-  {% else %}
+<div class="col-xs-12 apsa-agm-archive-listing">
+{% if label_hidden %}
+  {% if multiple %}
     <div{{ attributes }}>
-      <span{{ title_attributes }}>{{ label }}:</span>
-      {% if multiple %}
-        <span>
-      {% endif %}
       {% for item in items %}
-        <span{{ item.attributes }}>{{ item.content }}</span>
+        <div{{ item.attributes }}>{{ item.content }}</div>
       {% endfor %}
-      {% if multiple %}
-        </span>
-      {% endif %}
     </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes }}>{{ item.content }}</div>
+    {% endfor %}
   {% endif %}
+{% else %}
+  <div{{ attributes }}>
+    <span{{ title_attributes }}>{{ label }}:</span>
+    {% if multiple %}
+      <span>
+    {% endif %}
+    {% for item in items %}
+      <span{{ item.attributes }}>{{ item.content }}</span>
+    {% endfor %}
+    {% if multiple %}
+      </span>
+    {% endif %}
+  </div>
+{% endif %}
+</div>

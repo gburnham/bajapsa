@@ -63,7 +63,7 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes }}>
+<article{{ attributes.addClass('apsa-event-management') }}>
 
   {{ title_prefix }}
   {% if not page %}
@@ -111,10 +111,10 @@
 						var theIndex = arrayElement;
 						var signups = (theElement[1] == true ? "Yes" : "No");
 						var elementEntry = "<div class='row event-details' id='element_" + theIndex + "'>";
-						elementEntry += "<div class='col-xs-3 elementid em_event_id' data-id='" + theIndex + "' id='elementid_" + theIndex + "'>" + theIndex + "</div>";
-						elementEntry += "<div class='col-xs-3 em_event_title' id='elementtitle_" + theIndex + "'>" + theElement[0] + "</div>";
-						elementEntry += "<div class='col-xs-3 em_signups_allowed' id='elementsignups_" + theIndex + "'>" + signups  + "</div>";
-						elementEntry += "<div class='col-xs-3 em_signups_num' id='elementattendees_" + theIndex + "'>" + theElement[2] + "</div>";
+						elementEntry += "<div class='col-xs-3 elementid em_event_id text-center' data-id='" + theIndex + "' id='elementid_" + theIndex + "'>" + theIndex + "</div>";
+						elementEntry += "<div class='col-xs-4 em_event_title' id='elementtitle_" + theIndex + "'>" + theElement[0] + "</div>";
+						elementEntry += "<div class='col-xs-2 em_signups_allowed text-center' id='elementsignups_" + theIndex + "'>" + signups  + "</div>";
+						elementEntry += "<div class='col-xs-3 em_signups_num text-center' id='elementattendees_" + theIndex + "'>" + theElement[2] + "</div>";
 						elementEntry += "</div>";
 						jQuery("#eventTable").html(jQuery("#eventTable").html() + elementEntry);
 					});
@@ -130,12 +130,15 @@
 							jQuery("#" + thisElement).remove();
 						}
 						else {
-							thisElement = "<div class='row' id='" + thisElement + "'>";
-							thisElement += "<div class='col-xs-1'></div><div class='col-xs-4 clickable closeSignups' data-id='" + eid +"'>Close signups for this event</div><div class='col-xs-4 clickable saveAttended' data-id='" + eid +"'>Save Attendance</div><div class='col-xs-3'><a href='/node/add/event_email?eid=" + eid + "'>Send email to all attendees</a></div>";
-							thisElement += "<div class='col-xs-1'>Attended</div>";
+							thisElement = "<div class='row event-details-attendees' id='" + thisElement + "'>";
+							thisElement += "<div class='row event-details-buttons'><div class='col-xs-4 col-md-3 col-md-offset-2'><button class='btn btn-outline-primary btn-sm clickable closeSignups' data-id='" + eid +"'>Close signups for this event</button></div><div class='col-xs-4 col-md-2'><button class='btn btn-outline-primary btn-sm clickable saveAttended' data-id='" + eid +"'>Save Attendance</button></div><div class='col-xs-4 col-md-3'><a class='btn btn-outline-primary btn-sm' href='/node/add/event_email?eid=" + eid + "'>Send email to all attendees</a></div></div>";
+							thisElement += "<div class='row event-heading'>";
+							thisElement += "<div class='col-xs-2 text-center'>Attended</div>";
 							thisElement += "<div class='col-xs-3'>Name</div>";
-							thisElement += "<div class='col-xs-4'>Username</div>";
+							thisElement += "<div class='col-xs-3'>Username</div>";
 							thisElement += "<div class='col-xs-4'>Email</div>";
+							thisElement += "</div>";
+
 							if (data["signup_count"] > 0) {
 								var indexes = Object.keys(data["signups"]);
 								indexes.forEach(function (arrayElement) {
@@ -146,14 +149,16 @@
 									if (data["signups"][arrayElement][3] == 1) {
 										attended = " checked ";
 									}
-									thisElement += "<div class='col-xs-1'><input type='checkbox' class='" + eid + "_attend' id='user_" + arrayElement + "' class='eventAttend' " + attended + "></div>";
+									thisElement += "<div class='row event-details-attendee-details'>";
+									thisElement += "<div class='col-xs-2 text-center checkbox-attended'><input type='checkbox' class='" + eid + "_attend' id='user_" + arrayElement + "' class='eventAttend' " + attended + "></div>";
 									thisElement += "<div class='col-xs-3'>" + name + "</div>";
-									thisElement += "<div class='col-xs-4'>" + username + "</div>";
+									thisElement += "<div class='col-xs-3'>" + username + "</div>";
 									thisElement += "<div class='col-xs-4'>" + email + "</div>";
+									thisElement += "</div>";
 								});
 							}
 							else {
-								thisElement += "<div class='col-xs-10 offset-xs-2'><em>No signups</em></div>";
+								thisElement += "<div class='col-xs-10 col-xs-offset-2'><em>No signups</em></div>";
 							}
 							thisElement += "</div>";
 							jQuery(thisElement).insertAfter(jQuery(after));
@@ -197,13 +202,13 @@
 		}
 	</script>
 <div class="row">
-<div class="col-xs-6 offset-xs-3 show-events" style="cursor: pointer;" id="eventsOldNew">Showing upcoming events (click to switch to viewing past events)</div>
+<div class="col-xs-12 show-events" style="cursor: pointer;" id="eventsOldNew">Showing upcoming events (click to switch to viewing past events)</div>
 </div>
 <div class="row event-heading">
-<div class="col-xs-3"><b>Event ID (click for details)</b></div>
-<div class="col-xs-3"><b>Event Title</b></div>
-<div class="col-xs-3"><b>Signups Allowed?</b></div>
-<div class="col-xs-3"><b># of Signups</b></div>
+<div class="col-xs-3 text-center"><b>Event ID (click for details)</b></div>
+<div class="col-xs-4"><b>Event Title</b></div>
+<div class="col-xs-2 text-center"><b>Signups Allowed?</b></div>
+<div class="col-xs-3 text-center"><b># of Signups</b></div>
 </div>
 <span id="eventTable"></span>
 
