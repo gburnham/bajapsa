@@ -1869,7 +1869,10 @@ h2 {
 
 .fd-row {
   display: flex;
-  padding: 1em 1.2em 0; }
+  padding: 2em 1.2em;
+  border-bottom: #ddd solid 1px; }
+  .fd-row:last-child {
+    border-bottom: none; }
   .fd-row .fa {
     height: 80px;
     width: 80px;
@@ -1882,9 +1885,13 @@ h2 {
     font-size: 1.5em;
     font-weight: 700; }
 
-.fd-header h1 {
-  font-size: 2.0em;
-  font-weight: 700; }
+.fd-header {
+  background-color: #dde8f5;
+  padding: 1.6em 2.8em 2.0em;
+  margin: 0 1em 1.2em; }
+  .fd-header h1 {
+    font-size: 2.0em;
+    font-weight: 700; }
 
 .fd-text {
   padding-left: 2.4em; }
@@ -1957,7 +1964,8 @@ h2 {
   height: 600px;
   margin-bottom: 0; }
   .jumbotron p {
-    font-size: 18px; }
+    font-size: 18px;
+    line-height: 1.6em; }
   .jumbotron .slider-controls {
     position: absolute;
     z-index: 100;
@@ -1968,7 +1976,7 @@ h2 {
       display: inline-block;
       text-align: center;
       padding: 17px 0;
-      color: #ccc;
+      color: #999;
       transition: color 0.3s;
       cursor: pointer; }
     .jumbotron .slider-controls a:hover {
@@ -1978,15 +1986,20 @@ h2 {
       height: 50px;
       width: 50px; }
     .jumbotron .slider-controls.slider-button-prev {
-      float: left; }
+      float: left;
+      left: 20px; }
     .jumbotron .slider-controls.slider-button-next {
       float: right;
-      right: 30px; }
+      right: 20px; }
       .jumbotron .slider-controls.slider-button-next a {
         text-align: right; }
     .jumbotron .slider-controls .fa {
-      font-size: 1.25em;
+      font-size: 2.5em;
       padding: 0 10px; }
+
+@media screen and (min-width: 768px) {
+  .jumbotron .h1, .jumbotron h1 {
+    font-size: 1.5em; } }
 
 .container .jumbotron, .container-fluid .jumbotron {
   border-radius: 0; }
@@ -2036,30 +2049,33 @@ h2 {
       color: #eee; }
 
 /* line-height tests */
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_1 p {
-  line-height: 1.8em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_2 p {
-  line-height: 1.6em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_3 p {
-  line-height: 1.4em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_4 p {
-  line-height: 1.6em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_5 p {
-  line-height: 1.8em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_6 p {
-  line-height: 1.6em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_7 p {
-  line-height: 1.4em; }
-
-.jumbotron #views_slideshow_cycle_div_home_page_slider-block_1_0 p {
-  line-height: 1.6em; }
-
+/*
+.jumbotron {
+	#views_slideshow_cycle_div_home_page_slider-block_1_1 p {
+		line-height: 1.8em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_2 p {
+		line-height: 1.6em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_3 p {
+		line-height: 1.4em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_4 p {
+		line-height: 1.6em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_5 p {
+		line-height: 1.8em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_6 p {
+		line-height: 1.6em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_7 p {
+		line-height: 1.4em;
+	}
+	#views_slideshow_cycle_div_home_page_slider-block_1_0 p {
+		line-height: 1.6em;
+	}
+}*/
 .jumbotron .views-row {
   display: flex;
   flex-direction: column;
@@ -2455,8 +2471,11 @@ li.pager__item.is-active {
 /* Leadership and Committees page */
 .lc-header {
   background-color: #dde8f5;
-  padding: 8px 2.8em 12px;
-  margin-bottom: 1.2em; }
+  padding: 1.6em 2.8em 2.0em;
+  margin: 0 1em 1.2em; }
+  .lc-header h1 {
+    font-size: 2.0em;
+    font-weight: 700; }
 
 .lc-icon {
   height: 80px;
@@ -2522,11 +2541,12 @@ li.pager__item.is-active {
   #block-views-block-upcoming-agm-block-1 .apsa_agm_reasons {
     padding: 2em; }
     #block-views-block-upcoming-agm-block-1 .apsa_agm_reasons h4, #block-views-block-upcoming-agm-block-1 .apsa_agm_reasons ol li {
-      font-size: 1.25em; }
+      font-size: 1.375em;
+      padding-top: 0.5em; }
 
 .apsa-agm-next-meeting {
   padding: 2em;
-  background: #c8f09d; }
+  background: #dde8f5; }
   .apsa-agm-next-meeting .views-field {
     text-align: center; }
   .apsa-agm-next-meeting .views-field-title {
@@ -2557,13 +2577,11 @@ li.pager__item.is-active {
     padding-bottom: 0.75em;
     line-height: 2.8em; }
 
-.agm-location {
-  padding-bottom: 1.5em; }
-  .agm-location span p {
-    display: inline-block;
-    margin-bottom: 0px; }
-    .agm-location span p:nth-child(2) {
-      display: block; }
+.agm-location span p {
+  display: inline-block;
+  margin-bottom: 0px; }
+  .agm-location span p:nth-child(2) {
+    display: block; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
