@@ -217,7 +217,8 @@ h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
 h1 {
-  font-size: 32px; }
+  font-size: 32px;
+  font-weight: 700; }
 
 h2 {
   font-size: 26px; }
@@ -1987,10 +1988,10 @@ h2 {
       width: 50px; }
     .jumbotron .slider-controls.slider-button-prev {
       float: left;
-      left: 20px; }
+      left: 30px; }
     .jumbotron .slider-controls.slider-button-next {
       float: right;
-      right: 20px; }
+      right: 30px; }
       .jumbotron .slider-controls.slider-button-next a {
         text-align: right; }
     .jumbotron .slider-controls .fa {
@@ -2034,7 +2035,7 @@ h2 {
 .views-field-view-node {
   text-align: center;
   text-transform: uppercase;
-  width: 60px;
+  width: 100px;
   margin: 20px auto 0; }
 
 .btn-slider-link {
@@ -2582,6 +2583,49 @@ li.pager__item.is-active {
   margin-bottom: 0px; }
   .agm-location span p:nth-child(2) {
     display: block; }
+
+/* APSA Advocacy Corner */
+img.ac-panelist-headshot {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #ddd url(../images/apsa-placeholder-200x200.png);
+  background-size: cover;
+  margin-bottom: 0.75em; }
+
+.ac-panelists {
+  padding-top: 1em;
+  padding-bottom: 1.2em; }
+  .ac-panelists h3 {
+    font-size: 1.5em;
+    font-weight: 700; }
+
+.ac-panelist-name {
+  font-weight: 700; }
+
+.ac-search {
+  padding-top: 2.5em;
+  padding-bottom: 2.0em;
+  padding-right: 5.75em;
+  padding-left: 5.75em; }
+  @media screen and (max-width: 768px) {
+    .ac-search {
+      padding-top: 1.875em;
+      padding-right: 1em;
+      padding-left: 1em; } }
+
+.apsa-acq-question {
+  cursor: pointer;
+  color: #003F64; }
+
+.ac-questions h3 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-weight: 700; }
+
+.ac-questions .views-row {
+  padding-bottom: 0.625em;
+  padding-left: 1.25em; }
 
 /*--------------------------------------------------------------
 # Misc Drupal
