@@ -175,15 +175,22 @@
     
   </div>
 {% else %}
+	{% if node.id == 1380 %}
+	<!-- Latest Updates index page -->
   <div class="page-header-section page-header-section-general overlay">
-        {% if "/node/add/committee_page" in apsamisc_path() %}
-      <h1 class="page-header-title" id="node_add_committee_page"><span id="nacp_static">Create committee content</span></h1>                                     {% else %}
       <h1 class="page-header-title">{{ node.label }}</h1>
-        {% endif %}
+	{% else %}
+  <div class="page-header-section page-header-section-general overlay">
+		{% if "/node/add/committee_page" in apsamisc_path() %}
+	<h1 class="page-header-title" id="node_add_committee_page"><span id="nacp_static">Create committee content</span></h1>
+		{% else %}
+	<h1 class="page-header-title">{{ node.label }}</h1>
+		{% endif %}
+	</div>
+	{% endif %}
 
   </div>
 {% endif %}
-
 
   
 
