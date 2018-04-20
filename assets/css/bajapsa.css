@@ -448,7 +448,7 @@ ul.top-menu > li {
 .account-menu-login, .account-menu-logout, .account-menu-greeting {
   padding-right: 5px;
   padding-left: 5px;
-  text-align: left; }
+  text-align: right; }
 
 @media (min-width: 1200px) {
   .account-menu-logout {
@@ -482,6 +482,10 @@ ul.top-menu > li {
   font-weight: bold;
   padding: 8px .8em 8px .8em;
   font-size: 13px; }
+
+@media screen and (max-width: 768px) {
+  select.mnav {
+    background: #003F64; } }
 
 /* Layout */
 #primary, #sidebar {
@@ -1814,6 +1818,11 @@ h2 {
 .page-text-main p:first-child {
   font-size: 1.2857em; }
 
+/* ---- layout region ---- */
+.layout__region {
+  padding-right: 1em;
+  padding-left: 1em; }
+
 .committee-subtitle {
   color: #003F64;
   font-weight: 600;
@@ -2273,14 +2282,17 @@ h2 {
   border-bottom: none; }
 
 .latest-updates .field-content {
-  padding: 0px 20px 0px 10px; }
+  padding: 0px 20px 0px 10px;
+  text-align: left; }
   @media (min-width: 992px) {
     .latest-updates .field-content {
       padding: 0px 20px; } }
 
 .latest-updates-date {
+  color: #003F64;
   text-align: right;
   font-size: 1.375em;
+  font-weight: 700;
   line-height: 1.625em; }
   @media (min-width: 992px) {
     .latest-updates-date {

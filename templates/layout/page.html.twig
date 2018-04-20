@@ -147,6 +147,11 @@
   <div class="page-header-section page-header-section-strategic_plan overlay">
     <h1 class="page-header-title">Strategic Plan: {{ node.label }}</h1>
   </div>
+        {% elseif (pageType == 13) %}
+<!-- this is a Latest Update -->
+  <div class="page-header-section page-header-section-updates overlay">
+    <h1 class="page-header-title">Latest Updates</h1>
+  </div>
         {% else %}
 <!-- unknown type - output a generic header -->
   <div class="page-header-section page-header-section-general overlay">
