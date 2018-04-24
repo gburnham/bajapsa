@@ -485,7 +485,8 @@ ul.top-menu > li {
 
 @media screen and (max-width: 768px) {
   select.mnav {
-    background: #003F64; } }
+    background: #003F64;
+    height: 40px; } }
 
 /* Layout */
 #primary, #sidebar {
@@ -1815,9 +1816,6 @@ h2 {
   font-weight: 600;
   color: #606060; }
 
-.page-text-main p:first-child {
-  font-size: 1.2857em; }
-
 /* ---- layout region ---- */
 .layout__region {
   padding-right: 1em;
@@ -1974,6 +1972,7 @@ h2 {
   height: 600px;
   margin-bottom: 0; }
   .jumbotron p {
+    color: #606060;
     font-size: 18px;
     line-height: 1.6em; }
   .jumbotron .slider-controls {
@@ -2342,12 +2341,16 @@ h2 {
         padding: 0px 20px; } }
   .workshops-date {
     text-align: right;
-    font-size: 1.25em;
-    line-height: 1.2em; }
+    color: #003F64;
+    font-size: 22px;
+    font-size: 1.375em;
+    line-height: 1.2em;
+    font-weight: 900; }
     @media (min-width: 992px) {
       .workshops-date {
         position: relative;
-        top: 6px; } }
+        font-size: 28px;
+        font-size: 1.75em; } }
   .workshops-time, .workshops-duration {
     font-size: 1.25em; }
   @media (min-width: 992px) {
@@ -2372,15 +2375,18 @@ h2 {
 .apsa-event-title {
   font-size: 1.625em;
   font-weight: 700;
-  color: #003F64; }
+  color: #003F64;
+  padding-right: 1rem;
+  padding-left: 1rem; }
 
 .apsa-event-container {
   padding-bottom: 2em; }
 
 .apsa-event-checkbox {
-  padding-top: 0.3em;
-  padding-bottom: 0.8em; }
+  padding-top: 1em;
+  padding-bottom: 1.25em; }
   .apsa-event-checkbox label {
+    color: #003F64;
     font-weight: 700; }
 
 /* pager */
