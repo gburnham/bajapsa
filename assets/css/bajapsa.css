@@ -1620,21 +1620,21 @@ ul.inline, ul.links.inline {
   @media screen and (max-width: 768px) {
     .page-header-section {
       height: 200px; } }
-  .page-header-section-about .page-header-title, .page-header-section-agenda .page-header-title, .page-header-section-agreement .page-header-title, .page-header-section-policy .page-header-title, .page-header-section-news .page-header-title {
+  .page-header-section-about .page-header-title, .page-header-section-agenda .page-header-title, .page-header-section-agreement .page-header-title, .page-header-section-policy .page-header-title, .page-header-section-news .page-header-title, .page-header-section--orange .page-header-title {
     text-shadow: 4px 4px 4px rgba(124, 62, 1, 0.7); }
-  .page-header-section-about:before, .page-header-section-agenda:before, .page-header-section-agreement:before, .page-header-section-policy:before, .page-header-section-news:before {
+  .page-header-section-about:before, .page-header-section-agenda:before, .page-header-section-agreement:before, .page-header-section-policy:before, .page-header-section-news:before, .page-header-section--orange:before {
     background-color: rgba(200, 100, 2, 0.7); }
-  .page-header-section-bylaws .page-header-title, .page-header-section-minutes .page-header-title {
+  .page-header-section-bylaws .page-header-title, .page-header-section-minutes .page-header-title, .page-header-section-updates .page-header-title, .page-header-section--red .page-header-title {
     text-shadow: 4px 4px 4px rgba(173, 14, 21, 0.7); }
-  .page-header-section-bylaws:before, .page-header-section-minutes:before {
+  .page-header-section-bylaws:before, .page-header-section-minutes:before, .page-header-section-updates:before, .page-header-section--red:before {
     background-color: rgba(236, 28, 36, 0.7); }
-  .page-header-section-report .page-header-title {
+  .page-header-section-report .page-header-title, .page-header-section--green .page-header-title {
     text-shadow: 4px 4px 4px rgba(36, 72, 0, 0.7); }
-  .page-header-section-report:before {
+  .page-header-section-report:before, .page-header-section--green:before {
     background-color: rgba(74, 148, 1, 0.7); }
-  .page-header-section-general .page-header-title, .page-header-section-strategic_plan .page-header-title {
+  .page-header-section-general .page-header-title, .page-header-section-strategic_plan .page-header-title, .page-header-section--blue .page-header-title {
     text-shadow: 4px 4px 4px rgba(0, 63, 100, 0.7); }
-  .page-header-section-general:before, .page-header-section-strategic_plan:before {
+  .page-header-section-general:before, .page-header-section-strategic_plan:before, .page-header-section--blue:before {
     background-color: rgba(73, 143, 225, 0.7); }
 
 .overlay:before {
