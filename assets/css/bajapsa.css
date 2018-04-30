@@ -448,7 +448,7 @@ ul.top-menu > li {
 .account-menu-login, .account-menu-logout, .account-menu-greeting {
   padding-right: 5px;
   padding-left: 5px;
-  text-align: left; }
+  text-align: right; }
 
 @media (min-width: 1200px) {
   .account-menu-logout {
@@ -482,6 +482,11 @@ ul.top-menu > li {
   font-weight: bold;
   padding: 8px .8em 8px .8em;
   font-size: 13px; }
+
+@media screen and (max-width: 768px) {
+  select.mnav {
+    background: #003F64;
+    height: 40px; } }
 
 /* Layout */
 #primary, #sidebar {
@@ -1615,21 +1620,21 @@ ul.inline, ul.links.inline {
   @media screen and (max-width: 768px) {
     .page-header-section {
       height: 200px; } }
-  .page-header-section-about .page-header-title, .page-header-section-agenda .page-header-title, .page-header-section-agreement .page-header-title, .page-header-section-policy .page-header-title, .page-header-section-news .page-header-title {
+  .page-header-section-about .page-header-title, .page-header-section-agenda .page-header-title, .page-header-section-agreement .page-header-title, .page-header-section-policy .page-header-title, .page-header-section-news .page-header-title, .page-header-section--orange .page-header-title {
     text-shadow: 4px 4px 4px rgba(124, 62, 1, 0.7); }
-  .page-header-section-about:before, .page-header-section-agenda:before, .page-header-section-agreement:before, .page-header-section-policy:before, .page-header-section-news:before {
+  .page-header-section-about:before, .page-header-section-agenda:before, .page-header-section-agreement:before, .page-header-section-policy:before, .page-header-section-news:before, .page-header-section--orange:before {
     background-color: rgba(200, 100, 2, 0.7); }
-  .page-header-section-bylaws .page-header-title, .page-header-section-minutes .page-header-title {
+  .page-header-section-bylaws .page-header-title, .page-header-section-minutes .page-header-title, .page-header-section-updates .page-header-title, .page-header-section--red .page-header-title {
     text-shadow: 4px 4px 4px rgba(173, 14, 21, 0.7); }
-  .page-header-section-bylaws:before, .page-header-section-minutes:before {
+  .page-header-section-bylaws:before, .page-header-section-minutes:before, .page-header-section-updates:before, .page-header-section--red:before {
     background-color: rgba(236, 28, 36, 0.7); }
-  .page-header-section-report .page-header-title {
+  .page-header-section-report .page-header-title, .page-header-section--green .page-header-title {
     text-shadow: 4px 4px 4px rgba(36, 72, 0, 0.7); }
-  .page-header-section-report:before {
+  .page-header-section-report:before, .page-header-section--green:before {
     background-color: rgba(74, 148, 1, 0.7); }
-  .page-header-section-general .page-header-title, .page-header-section-strategic_plan .page-header-title {
+  .page-header-section-general .page-header-title, .page-header-section-strategic_plan .page-header-title, .page-header-section--blue .page-header-title {
     text-shadow: 4px 4px 4px rgba(0, 63, 100, 0.7); }
-  .page-header-section-general:before, .page-header-section-strategic_plan:before {
+  .page-header-section-general:before, .page-header-section-strategic_plan:before, .page-header-section--blue:before {
     background-color: rgba(73, 143, 225, 0.7); }
 
 .overlay:before {
@@ -1811,8 +1816,10 @@ h2 {
   font-weight: 600;
   color: #606060; }
 
-.page-text-main p:first-child {
-  font-size: 1.2857em; }
+/* ---- layout region ---- */
+.layout__region {
+  padding-right: 1em;
+  padding-left: 1em; }
 
 .committee-subtitle {
   color: #003F64;
@@ -1965,6 +1972,7 @@ h2 {
   height: 600px;
   margin-bottom: 0; }
   .jumbotron p {
+    color: #606060;
     font-size: 18px;
     line-height: 1.6em; }
   .jumbotron .slider-controls {
@@ -2273,14 +2281,17 @@ h2 {
   border-bottom: none; }
 
 .latest-updates .field-content {
-  padding: 0px 20px 0px 10px; }
+  padding: 0px 20px 0px 10px;
+  text-align: left; }
   @media (min-width: 992px) {
     .latest-updates .field-content {
       padding: 0px 20px; } }
 
 .latest-updates-date {
+  color: #003F64;
   text-align: right;
   font-size: 1.375em;
+  font-weight: 700;
   line-height: 1.625em; }
   @media (min-width: 992px) {
     .latest-updates-date {
@@ -2330,12 +2341,16 @@ h2 {
         padding: 0px 20px; } }
   .workshops-date {
     text-align: right;
-    font-size: 1.25em;
-    line-height: 1.2em; }
+    color: #003F64;
+    font-size: 22px;
+    font-size: 1.375em;
+    line-height: 1.2em;
+    font-weight: 900; }
     @media (min-width: 992px) {
       .workshops-date {
         position: relative;
-        top: 6px; } }
+        font-size: 28px;
+        font-size: 1.75em; } }
   .workshops-time, .workshops-duration {
     font-size: 1.25em; }
   @media (min-width: 992px) {
@@ -2360,15 +2375,18 @@ h2 {
 .apsa-event-title {
   font-size: 1.625em;
   font-weight: 700;
-  color: #003F64; }
+  color: #003F64;
+  padding-right: 1rem;
+  padding-left: 1rem; }
 
 .apsa-event-container {
   padding-bottom: 2em; }
 
 .apsa-event-checkbox {
-  padding-top: 0.3em;
-  padding-bottom: 0.8em; }
+  padding-top: 1em;
+  padding-bottom: 1.25em; }
   .apsa-event-checkbox label {
+    color: #003F64;
     font-weight: 700; }
 
 /* pager */
